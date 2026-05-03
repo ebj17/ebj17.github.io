@@ -67,7 +67,11 @@ nav {
     padding: 25px 0;
     height: 80px;
     align-items: center;
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--background-color);
+    border-bottom: 1px solid var(--border-color);
 }
 
 nav .left a {
@@ -566,6 +570,70 @@ footer p {
 
 
 
+/* SECTION: About */
+.about-section {
+    margin: 60px 0 100px;
+}
+
+.about-section h2 {
+    font-size: 34px;
+    margin-bottom: 30px;
+}
+
+.about-section .about-group {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.about-section .about-text {
+    flex: 3;
+}
+
+.about-section .about-highlights {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.about-section .highlight-card {
+    padding: 20px 22px;
+    border-radius: 12px;
+    background: var(--light-background-color);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.about-section .highlight-card:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.about-section .highlight-card i {
+    font-size: 22px;
+    color: var(--link-color);
+}
+
+.about-section .highlight-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-top: 2px;
+}
+
+.about-section .highlight-card p {
+    font-size: 14px;
+    margin: 0;
+    color: var(--text-color);
+    opacity: 0.75;
+    line-height: 1.5;
+}
+
+
 /* PROJECT POST VIEW */
 
 .post-view {
@@ -739,7 +807,12 @@ footer p {
     body{
         padding: 0 20px;
     }
-    
+
+    /* SECTION: About */
+    .about-section .about-group {
+        gap: 30px;
+    }
+
     /* SECTION 1:HERO */
     .hero-section {
         padding: 0 20px;
@@ -847,10 +920,25 @@ footer p {
         display: none;
     }
 
+    /* SECTION: About */
+    .about-section .about-group {
+        flex-direction: column;
+    }
+
+    .about-section .about-highlights {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .about-section .highlight-card {
+        flex: 1;
+        min-width: 180px;
+    }
+
     .project-grid-section .grid-container {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
-  
+
     /*SECTION 4:Contact */
     .contact-section .group{
         flex-direction: column;
@@ -903,6 +991,16 @@ footer p {
     body{
         padding: 0 10px;
     }
+
+    /* SECTION: About */
+    .about-section .about-highlights {
+        flex-direction: column;
+    }
+
+    .about-section .highlight-card {
+        min-width: unset;
+    }
+
     /*SECTION 1:HERO */
     .hero-section {
         padding: 0 20px
