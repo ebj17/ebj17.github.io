@@ -1,0 +1,101 @@
+---
+layout: wrapper
+title: About
+permalink: /about/
+---
+
+<div class="about-page">
+
+    <!-- Header: image, name, bio, links -->
+    <div class="about-page-header">
+        <div class="about-page-image">
+            <img src="{{ site.profile_image }}" alt="{{ site.name }}">
+        </div>
+
+        <h1>{{ site.name }}</h1>
+
+        <p class="about-bio">
+            Replace this with a short personal statement — who you are, what drives you,
+            and what you are working toward. This is where personality comes through, so
+            write it in your own voice.
+        </p>
+
+        <div class="about-cta">
+            {% if site.external-links.linkedin %}
+            <a href="{{ site.external-links.linkedin }}" target="_blank" rel="noopener noreferrer" class="btn-solid">
+                <i class="fa-brands fa-linkedin"></i> LinkedIn
+            </a>
+            {% endif %}
+            <a href="{{ site.resume-url }}" target="_blank" rel="noopener noreferrer" class="btn-outline">
+                <i class="fa-solid fa-file-arrow-down"></i> Resume
+            </a>
+        </div>
+    </div>
+
+    <hr class="about-divider">
+
+    <!-- CV -->
+    <div class="about-cv">
+
+        <section class="cv-section">
+            <h2>Education</h2>
+            <div class="cv-item">
+                <div class="cv-row">
+                    <h3>University Name</h3>
+                    <span class="cv-date">Sep 20XX – Jun 20XX</span>
+                </div>
+                <p class="cv-sub">Degree · Field of Study · Location</p>
+                <ul>
+                    <li>Relevant coursework, thesis, or dissertation title.</li>
+                    <li>Academic distinctions, scholarships, or notable projects.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="cv-section">
+            <h2>Experience</h2>
+
+            <div class="cv-item">
+                <div class="cv-row">
+                    <h3>Company / Organisation</h3>
+                    <span class="cv-date">Month 20XX – Month 20XX</span>
+                </div>
+                <p class="cv-sub">Job Title · Location</p>
+                <ul>
+                    <li>Describe what you built, designed, or achieved in concrete terms.</li>
+                    <li>Quantify impact wherever possible — numbers make results tangible.</li>
+                    <li>Focus on outcomes, not just duties.</li>
+                </ul>
+            </div>
+
+            <div class="cv-item">
+                <div class="cv-row">
+                    <h3>Company / Organisation</h3>
+                    <span class="cv-date">Month 20XX – Month 20XX</span>
+                </div>
+                <p class="cv-sub">Job Title · Location</p>
+                <ul>
+                    <li>Describe what you built, designed, or achieved.</li>
+                    <li>Key technical outcomes or skills demonstrated.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="cv-section">
+            <h2>Projects</h2>
+
+            <div class="cv-item">
+                <div class="cv-row">
+                    <h3>Project Name</h3>
+                    <span class="cv-date">Year</span>
+                </div>
+                <p class="cv-sub">Role · Tools / Technologies used</p>
+                <ul>
+                    <li>Brief description of the project and your specific contribution.</li>
+                    <li>Key technical outcomes or problems solved.</li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
+</div>
