@@ -15,9 +15,9 @@ permalink: /about/
         <h1>{{ site.name }}</h1>
 
         <p class="about-bio">
-            Replace this with a short personal statement — who you are, what drives you,
-            and what you are working toward. This is where personality comes through, so
-            write it in your own voice.
+            A hardworking and dedicated Mechatronics engineer with a strong passion for robotics,
+            control systems, and automation technologies. Highly skilled in integrating electronics,
+            programming, and mechanical design to develop intelligent robotic systems.
         </p>
 
         <div class="about-cta">
@@ -39,16 +39,29 @@ permalink: /about/
 
         <section class="cv-section">
             <h2>Education</h2>
+
             <div class="cv-item">
                 <div class="cv-row">
-                    <h3>University Name</h3>
-                    <span class="cv-date">Sep 20XX – Jun 20XX</span>
+                    <h3>Technical University of Denmark (DTU)</h3>
+                    <span class="cv-date">Sep 2026 – Jan 2028</span>
                 </div>
-                <p class="cv-sub">Degree · Field of Study · Location</p>
-                <ul>
-                    <li>Relevant coursework, thesis, or dissertation title.</li>
-                    <li>Academic distinctions, scholarships, or notable projects.</li>
-                </ul>
+                <p class="cv-sub">MSc Honours Programme in Autonomous Systems</p>
+            </div>
+
+            <div class="cv-item">
+                <div class="cv-row">
+                    <h3>University of Southern Denmark (SDU)</h3>
+                    <span class="cv-date">Sep 2022 – Jan 2026</span>
+                </div>
+                <p class="cv-sub">BSc Mechatronics Engineering · Honors 10.3/12 GPA</p>
+            </div>
+
+            <div class="cv-item">
+                <div class="cv-row">
+                    <h3>National University of Singapore (NUS)</h3>
+                    <span class="cv-date">Aug 2024 – Dec 2024</span>
+                </div>
+                <p class="cv-sub">Exchange Programme · Robotics and Automation</p>
             </div>
         </section>
 
@@ -57,26 +70,30 @@ permalink: /about/
 
             <div class="cv-item">
                 <div class="cv-row">
-                    <h3>Company / Organisation</h3>
-                    <span class="cv-date">Month 20XX – Month 20XX</span>
+                    <h3>Bachelor Thesis Writer</h3>
+                    <span class="cv-date">Aug 2025 – Jan 2026</span>
                 </div>
-                <p class="cv-sub">Job Title · Location</p>
+                <p class="cv-sub">Novo Nordisk · Copenhagen, Denmark · Grade: 12/12</p>
+                <p class="cv-thesis"><em>Modelling and Control of a Time-Pressure Membrane Valve System for Pharmaceutical Filling</em></p>
                 <ul>
-                    <li>Describe what you built, designed, or achieved in concrete terms.</li>
-                    <li>Quantify impact wherever possible — numbers make results tangible.</li>
-                    <li>Focus on outcomes, not just duties.</li>
+                    <li>Contributing to a novel filling line concept through a hybrid modelling approach combining physics and data-driven methods.</li>
+                    <li>Designed an embedded system architecture for real-time sensor data acquisition for model validation.</li>
+                    <li>CFD simulation of the dispensing manifold to generate high fidelity data and support control strategy.</li>
+                    <li>Developed and validated nonlinear control strategies compared to baseline ON/OFF control.</li>
                 </ul>
             </div>
 
             <div class="cv-item">
                 <div class="cv-row">
-                    <h3>Company / Organisation</h3>
-                    <span class="cv-date">Month 20XX – Month 20XX</span>
+                    <h3>Manufacturing Automation Technology Intern</h3>
+                    <span class="cv-date">Feb 2025 – Jul 2025</span>
                 </div>
-                <p class="cv-sub">Job Title · Location</p>
+                <p class="cv-sub">Danfoss Drives · Full-time · Gråsten, Denmark</p>
                 <ul>
-                    <li>Describe what you built, designed, or achieved.</li>
-                    <li>Key technical outcomes or skills demonstrated.</li>
+                    <li>Designed and deployed a robot assembly cell for human-robot collaboration complying with ISO standards.</li>
+                    <li>Programmed serial-chain manipulators for kitting operations, involving inter-robot communication.</li>
+                    <li>Tested and redesigned frequency converter parts in CAD to optimise assembly efficiency per DFAA principles.</li>
+                    <li>Integrated and evaluated vision-based classification systems for component recognition, comparing commercial solutions with custom deep-learning models.</li>
                 </ul>
             </div>
         </section>
@@ -86,13 +103,79 @@ permalink: /about/
 
             <div class="cv-item">
                 <div class="cv-row">
-                    <h3>Project Name</h3>
-                    <span class="cv-date">Year</span>
+                    <h3>Reinforcement Learning for Serial-Chain Manipulator Control</h3>
+                    <span class="cv-date">April 2026</span>
                 </div>
-                <p class="cv-sub">Role · Tools / Technologies used</p>
                 <ul>
-                    <li>Brief description of the project and your specific contribution.</li>
-                    <li>Key technical outcomes or problems solved.</li>
+                    <li>Built a custom OpenAI Gym environment for a 7-DOF Kuka iiwa arm in PyBullet.</li>
+                    <li>Utilized a 17-dimensional observation space and a negative Euclidean distance reward function to guide policy learning.</li>
+                    <li>Trained an on-policy PPO agent using Stable Baselines3 with a custom MLP policy network [512,512,256,128] and ReLU activation, achieving end-effector positioning within 2 cm of random fixed targets.</li>
+                    <li>Two-stage training with an additional angular velocity penalization reward term to reduce joint oscillation near target.</li>
+                </ul>
+            </div>
+
+            <div class="cv-item">
+                <div class="cv-row">
+                    <h3>Deep Learning for Pose and Age Classification</h3>
+                    <span class="cv-date">Apr 2025 – Jun 2025</span>
+                </div>
+                <ul>
+                    <li>Implemented an OpenPose-based Python classifier with skeleton overlay for automated posture recognition in Jupyter Notebook.</li>
+                    <li>Trained a convolutional neural network for facial age classification using live video feed from an external camera.</li>
+                    <li>Integrated OpenCV for image processing and real-time tracking and display of predictions.</li>
+                </ul>
+            </div>
+
+            <div class="cv-item">
+                <div class="cv-row">
+                    <h3>Robot Manipulator Path Planning using STOMP</h3>
+                    <span class="cv-date">Sep 2024 – Nov 2024</span>
+                </div>
+                <ul>
+                    <li>Developed a stochastic trajectory optimisation algorithm in MATLAB for collision-free motion planning of serial-chain manipulators.</li>
+                    <li>Integrated forward kinematics using the Product of Exponentials formulation.</li>
+                    <li>Maintained end-effector orientation constraints whilst simulating obstacle avoidance.</li>
+                </ul>
+            </div>
+
+            <div class="cv-item">
+                <div class="cv-row">
+                    <h3>Dynamic Modelling and Control of a 2-DOF Robotic Arm</h3>
+                    <span class="cv-date">Sep 2024 – Nov 2024</span>
+                </div>
+                <p class="cv-sub">NUS Coursework</p>
+                <ul>
+                    <li>Modelled a two-link robotic arm using Lagrangian dynamics and implemented the nonlinear system in MATLAB Simulink.</li>
+                    <li>Designed and tuned a PID controller for trajectory tracking, evaluating performance under varying inertia, Coriolis, and gravitational effects.</li>
+                </ul>
+            </div>
+
+            <div class="cv-item">
+                <div class="cv-row">
+                    <h3>Quadcopter Stabilisation</h3>
+                    <span class="cv-date">Feb 2024 – Jun 2024</span>
+                </div>
+                <p class="cv-sub">Semester Project 4</p>
+                <ul>
+                    <li>Modelled quadcopter dynamics in state-space representation.</li>
+                    <li>LQI controller developed in MATLAB and Simulink and deployed on BeagleBone Blue.</li>
+                    <li>Collected motor data on force-thrust characteristics for control system analysis and model validation.</li>
+                    <li>Developed a Kalman filter for sensor fusion and state estimation, reducing process and measurement noise.</li>
+                    <li>Designed and 3D printed a drone frame mechanically validated in Ansys.</li>
+                </ul>
+            </div>
+
+            <div class="cv-item">
+                <div class="cv-row">
+                    <h3>Autonomous Bartender AGV</h3>
+                    <span class="cv-date">Sep 2023 – Dec 2023</span>
+                </div>
+                <p class="cv-sub">Semester Project 3</p>
+                <ul>
+                    <li>Designed and built a tracked robot capable of delivering beverages to assigned seats along a bar table.</li>
+                    <li>Dual microcontroller setup (Arduino &amp; ESP8266) for distributed control and real-time communication.</li>
+                    <li>Programmed PWM motor control and ultrasonic sensor-based obstacle avoidance in C++.</li>
+                    <li>Load cell integration for automatic initialisation once drink is detected in holder.</li>
                 </ul>
             </div>
         </section>

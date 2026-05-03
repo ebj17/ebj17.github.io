@@ -772,6 +772,13 @@ footer p {
     margin: 4px 0 10px;
 }
 
+.cv-thesis {
+    font-size: 14px;
+    color: var(--text-color);
+    opacity: 0.7;
+    margin: 0 0 10px;
+}
+
 .cv-item ul {
     padding-left: 18px;
     display: flex;
