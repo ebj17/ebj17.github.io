@@ -2,107 +2,34 @@
 layout: wrapper
 ---
 
-{% assign folder_path = page.path | split: "/" | slice: 0, 2 | join: "/" %}
-{% assign image_path = "/" | append: folder_path | append: page['main-image'] %}
-
 <div class="post-view">
-
-    {% if page.objectives or page.outcomes or page.technical %}
-
-    <!-- Detailed two-column layout -->
-    <div class="post-header">
-        <h1>{{ page.title }}</h1>
-        <p class="post-description">{{ page.description }}</p>
-        <div class="skills-list">
-            {% for skill in page.skills %}
-            <span class="skill">{{ skill }}</span>
-            {% endfor %}
-        </div>
-    </div>
-
-    <div class="post-detail">
-
-        <div class="post-detail-left">
-
-            {% if page.objectives %}
-            <div class="detail-section objectives">
-                <h2>Objectives</h2>
-                <ul>
-                    {% for item in page.objectives %}
-                    <li>{{ item }}</li>
-                    {% endfor %}
-                </ul>
-            </div>
-            {% endif %}
-
-            {% if page.outcomes %}
-            <div class="detail-section outcomes">
-                <h2>Outcomes &amp; Contributions</h2>
-                <ul>
-                    {% for item in page.outcomes %}
-                    <li>{{ item }}</li>
-                    {% endfor %}
-                </ul>
-            </div>
-            {% endif %}
-
-            {% if page.technical %}
-            <div class="detail-section technical">
-                <h2>Technical Details &amp; Skills</h2>
-                <ul>
-                    {% for item in page.technical %}
-                    <li>{{ item }}</li>
-                    {% endfor %}
-                </ul>
-            </div>
-            {% endif %}
-
-        </div>
-
-        <div class="post-detail-right">
-            {% if page.gallery %}
-                {% for img in page.gallery %}
-                {% assign img_path = "/" | append: folder_path | append: img %}
-                <img src="{{ img_path }}" alt="{{ page.title }} image {{ forloop.index }}">
-                {% endfor %}
-            {% else %}
-                <img src="{{ image_path }}" alt="{{ page.title }}">
-            {% endif %}
-        </div>
-
-    </div>
-
-    {% if content != "" %}
-    <div class="content post-extra">
-        {{ content }}
-    </div>
-    {% endif %}
-
-    {% else %}
-
-    <!-- Simple fallback layout for basic projects -->
     <div class="summary">
+        
+       
+        {% assign folder_path = page.path | split: "/" | slice: 0, 2 | join: "/" %}
+        {% assign image_path = "/" | append: folder_path | append: page['main-image'] %}       
         <img src="{{ image_path }}" alt="{{ page.title }} image">
+        
         <div class="title-header">
-            <h1>{{ page.title }}</h1>
+            <h1>{{page.title}}</h1>
         </div>
+        
         <div class="project-description">
             <h2>Project Overview</h2>
             <p>{{ page.description }}</p>
         </div>
         <div class="skills-card">
-            <h2>Skills Used</h2>
+            <h2>Skills Used</h2> 
             <div class="skills-list">
                 {% for skill in page.skills %}
-                <span class="skill">{{ skill }}</span>
+                <span class="skill">{{ skill }}</span>    
                 {% endfor %}
             </div>
         </div>
     </div>
+      
     <div class="content">
-        {{ content }}
+        {{content}}
     </div>
-
-    {% endif %}
-
 </div>
+
