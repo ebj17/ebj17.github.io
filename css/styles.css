@@ -836,6 +836,116 @@ footer p {
 }
 
 
+/* PROJECT POST — two-column detail section */
+.post-columns {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    padding: 30px 50px 40px;
+    border-top: 1px solid var(--border-color);
+}
+
+.post-columns-left {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.post-columns-right {
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    position: sticky;
+    top: 96px;
+}
+
+.post-columns-right img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+}
+
+.post-columns-right-empty {
+    width: 100%;
+    aspect-ratio: 4/3;
+    border: 2px dashed var(--border-color);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--text-color);
+    opacity: 0.35;
+}
+
+.post-columns-right-empty i {
+    font-size: 40px;
+}
+
+.post-columns-right-empty span {
+    font-size: 14px;
+}
+
+.detail-section {
+    padding: 16px 18px;
+    border-radius: 10px;
+    border-left: 4px solid;
+}
+
+.detail-section.objectives {
+    background-color: #fefce8;
+    border-left-color: #ca8a04;
+}
+
+.detail-section.outcomes {
+    background-color: #f0fdf4;
+    border-left-color: #16a34a;
+}
+
+.detail-section.technical {
+    background-color: #fff1f2;
+    border-left-color: #e11d48;
+}
+
+.detail-section h2 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.detail-section ul {
+    padding-left: 16px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.detail-section ul li {
+    font-size: 14px;
+    color: var(--text-color);
+    line-height: 1.6;
+    opacity: 0.88;
+}
+
+@media (max-width: 900px) {
+    .post-columns {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .post-columns-right {
+        position: static;
+        width: 100%;
+    }
+}
+
+
 /* PROJECT POST VIEW */
 
 .post-view {

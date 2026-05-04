@@ -27,7 +27,63 @@ layout: wrapper
             </div>
         </div>
     </div>
-      
+
+    {% if page.objectives or page.outcomes or page.technical or page.gallery %}
+    {% assign folder_path = page.path | split: "/" | slice: 0, 2 | join: "/" %}
+    <div class="post-columns">
+
+        <div class="post-columns-left">
+            {% if page.objectives %}
+            <div class="detail-section objectives">
+                <h2>Objectives</h2>
+                <ul>
+                    {% for item in page.objectives %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+
+            {% if page.outcomes %}
+            <div class="detail-section outcomes">
+                <h2>Outcomes &amp; Contributions</h2>
+                <ul>
+                    {% for item in page.outcomes %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+
+            {% if page.technical %}
+            <div class="detail-section technical">
+                <h2>Technical Specifications</h2>
+                <ul>
+                    {% for item in page.technical %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="post-columns-right">
+            {% if page.gallery %}
+                {% for img in page.gallery %}
+                {% assign img_path = "/" | append: folder_path | append: img %}
+                <img src="{{ img_path }}" alt="{{ page.title }} image {{ forloop.index }}">
+                {% endfor %}
+            {% else %}
+            <div class="post-columns-right-empty">
+                <i class="fa-regular fa-image"></i>
+                <span>Images coming soon</span>
+            </div>
+            {% endif %}
+        </div>
+
+    </div>
+    {% endif %}
+
     <div class="content">
         {{content}}
     </div>
