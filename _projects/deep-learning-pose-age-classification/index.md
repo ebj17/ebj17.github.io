@@ -29,5 +29,6 @@ technical:
   - OpenCV used for frame capture, image preprocessing, and real-time overlay of classification results.
 
 gallery:
-  - /preview.png
+  - /gallery-1.png
+  - /gallery-2.png
 ---
