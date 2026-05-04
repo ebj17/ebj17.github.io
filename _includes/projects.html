@@ -3,24 +3,47 @@
     <h2>Projects</h2>
 
     <div class="grid-container">
-        {% for item in site.projects %}
-    <a href="{{ item.url }}" class="project-link">
-        <div class="project-card">
-            {% assign folder_path = item.path | split: "/" | slice: 0, 2 | join: "/" %}
-            {% assign image_path = "/" | append: folder_path | append: item['main-image'] %}
-            <img src="{{ image_path }}" alt="{{ item.title }} image" {% if item.image-position %}style="object-position: {{ item.image-position }};"{% endif %}>
-            <h3 class="project-title">{{ item.title }}</h3>
-            <div class="project-skills">
-                {% for skill in item.skills %}
-                    <span class="skill">{{ skill }}</span>
-                {% endfor %}
-            </div>
-            <p class="project-description">{{ item.description }}</p>
-            <button class="read-more">Read more →</button>
-        </div>
-    </a>
-{% endfor %}
-    </div>
 
+        {% assign featured_projects = site.projects | where: "featured", true %}
+        {% assign regular_projects = site.projects | where_exp: "item", "item.featured != true" %}
+
+        {% for item in featured_projects %}
+        {% assign folder_path = item.path | split: "/" | slice: 0, 2 | join: "/" %}
+        {% assign image_path = "/" | append: folder_path | append: item['main-image'] %}
+        <a href="{{ item.url }}" class="project-link featured">
+            <div class="project-card">
+                <span class="featured-badge">Bachelor's Thesis</span>
+                <img src="{{ image_path }}" alt="{{ item.title }} image" {% if item.image-position %}style="object-position: {{ item.image-position }};"{% endif %}>
+                <h3 class="project-title">{{ item.title }}</h3>
+                <div class="project-skills">
+                    {% for skill in item.skills %}
+                        <span class="skill">{{ skill }}</span>
+                    {% endfor %}
+                </div>
+                <p class="project-description">{{ item.description }}</p>
+                <button class="read-more">Read more →</button>
+            </div>
+        </a>
+        {% endfor %}
+
+        {% for item in regular_projects %}
+        <a href="{{ item.url }}" class="project-link">
+            <div class="project-card">
+                {% assign folder_path = item.path | split: "/" | slice: 0, 2 | join: "/" %}
+                {% assign image_path = "/" | append: folder_path | append: item['main-image'] %}
+                <img src="{{ image_path }}" alt="{{ item.title }} image" {% if item.image-position %}style="object-position: {{ item.image-position }};"{% endif %}>
+                <h3 class="project-title">{{ item.title }}</h3>
+                <div class="project-skills">
+                    {% for skill in item.skills %}
+                        <span class="skill">{{ skill }}</span>
+                    {% endfor %}
+                </div>
+                <p class="project-description">{{ item.description }}</p>
+                <button class="read-more">Read more →</button>
+            </div>
+        </a>
+        {% endfor %}
+
+    </div>
 
  </section>
