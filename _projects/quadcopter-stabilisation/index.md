@@ -14,7 +14,7 @@ skills:
   - 3D Printing
   - Embedded Systems
 main-image: /preview.png
-image-position: center 70%
+image-position: center 60%
 
 objectives:
   - Model quadcopter dynamics in state-space representation for controller design.
