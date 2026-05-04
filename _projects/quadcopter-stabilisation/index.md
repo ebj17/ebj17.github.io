@@ -32,5 +32,5 @@ technical:
   - Kalman filter designed for sensor fusion combining IMU data to estimate state with reduced noise.
 
 gallery:
-  - /preview.png
+  - /Screenshot 2026-05-04 115913.png
 ---
