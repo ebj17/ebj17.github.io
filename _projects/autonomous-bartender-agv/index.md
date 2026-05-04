@@ -31,5 +31,6 @@ technical:
   - Load cell integrated to automatically detect drink placement and trigger the delivery sequence.
 
 gallery:
-  - /preview.png
+  - /gallery-1.jpeg
+  - /gallery-2.jpg
 ---
