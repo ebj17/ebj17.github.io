@@ -1,8 +1,13 @@
 ---
 layout: post
-title: Autonomous Bartender AGV
+
+# ── TITLE & DESCRIPTION ──────────────────────────────────────────────────────
+title: Autonomous Bartender AGV   # h1 shown at the top of the page
 description: Designed and built a tracked autonomous robot capable of delivering beverages to assigned seats, using a dual microcontroller setup, PWM motor control, ultrasonic obstacle avoidance, and load cell-triggered initialisation.
-skills:
+# ↑ paragraph shown under "Project Overview"
+
+# ── SKILLS ───────────────────────────────────────────────────────────────────
+skills:                        # pill tags shown under "Skills Used" — add or remove lines
   - C++
   - Arduino
   - ESP8266
@@ -12,25 +17,36 @@ skills:
   - Obstacle Avoidance
   - Load Cell Integration
   - Distributed Control
-main-image: /preview.png
 
-objectives:
+# ── IMAGES ───────────────────────────────────────────────────────────────────
+main-image: /preview.png       # banner image at the top of the page (crop ratio 3:1)
+# image-position: center 50%  # optional: shift the banner crop, e.g. "center 30%"
+
+# ── SPEC BOXES ───────────────────────────────────────────────────────────────
+objectives:                    # yellow box — what you set out to do
   - Design and build a tracked robot capable of autonomously navigating a bar table and delivering beverages to assigned seats.
   - Implement distributed control using a dual microcontroller setup for real-time communication and task separation.
   - Integrate load cell sensing for automatic drink detection and ultrasonic sensors for obstacle avoidance.
 
-outcomes:
+outcomes:                      # green box — key results and achievements
   - Successfully built and demonstrated a tracked AGV delivering beverages autonomously along a bar table.
   - Dual Arduino & ESP8266 setup enabled reliable distributed control and wireless communication.
   - Load cell integration triggered automatic initialisation upon drink placement, streamlining operation.
 
-technical:
+technical:                     # red box — technologies, methods, and implementation details
   - Dual microcontroller architecture using Arduino and ESP8266 for distributed control and real-time communication.
   - PWM-based motor control programmed in C++ for precise tracked movement along a defined path.
   - Ultrasonic sensor array used for real-time obstacle detection and avoidance during navigation.
   - Load cell integrated to automatically detect drink placement and trigger the delivery sequence.
 
-gallery:
-  - /gallery-1.jpeg
+# ── GALLERY ──────────────────────────────────────────────────────────────────
+gallery:                       # images stacked in the right column alongside the spec boxes
+  - /gallery-1.jpeg            # add or remove lines as needed
   - /gallery-2.jpg
 ---
+
+<!-- ── WRITTEN CONTENT ──────────────────────────────────────────────────────
+     Everything below renders as the body section under the spec boxes.
+     Supports full markdown: ## headings, **bold**, - lists, ![img](path), etc.
+     Leave blank if you don't need a written section.
+─────────────────────────────────────────────────────────────────────────── -->
