@@ -39,8 +39,8 @@ technical:                     # red box — technologies, methods, and implemen
   - Obstacle avoidance handled through signed-distance field evaluation at each trajectory waypoint.
 
 # ── GALLERY ──────────────────────────────────────────────────────────────────
-gallery:                       # images stacked in the right column alongside the spec boxes
-  - /preview.png               # add or remove lines as needed
+# Drop any image named gallery-1.jpg, gallery-2.jpg, gallery-3.jpg etc. into
+# this project folder — they appear automatically in order, no edits needed here.
 ---
 
 <!-- ── WRITTEN CONTENT ──────────────────────────────────────────────────────
