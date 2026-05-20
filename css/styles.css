@@ -936,7 +936,7 @@ footer p {
 
 /* SPEC BOX TITLE — "Objectives", "Outcomes & Contributions", "Technical Details" heading */
 .detail-section h2 {
-    font-size: 15px; /* tuning: spec box title size */
+    font-size: 20px; /* tuning: spec box title size */
     font-weight: 600;
     color: var(--text-color);
     margin-bottom: 10px;
@@ -952,7 +952,7 @@ footer p {
 
 /* SPEC BOX BULLETS — list items inside Objectives / Outcomes / Technical Details */
 .detail-section ul li {
-    font-size: 15px; /* tuning: spec box bullet text size */
+    font-size: 17px; /* tuning: spec box bullet text size */
     color: var(--text-color);
     line-height: 1.6;
     opacity: 0.88;
@@ -1009,7 +1009,7 @@ footer p {
 
 /* PROJECT OVERVIEW TITLE — "Project Overview" section heading */
 .post-view .summary .project-description h2 {
-    font-size: 17px; /* tuning: "Project Overview" heading size */
+    font-size: 20px; /* tuning: "Project Overview" heading size */
 }
 
 /* PROJECT OVERVIEW — paragraph text */
@@ -1020,7 +1020,7 @@ footer p {
 
 /* SKILLS USED TITLE — "Skills Used" section heading */
 .post-view .summary .skills-card h2 {
-    font-size: 17px; /* tuning: "Skills Used" heading size */
+    font-size: 20px; /* tuning: "Skills Used" heading size */
 }
 
 .post-view .summary .skills-card {
