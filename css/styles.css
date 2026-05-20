@@ -856,11 +856,12 @@ footer p {
 }
 
 
+/* ===== PROJECT PAGE TUNING — spec boxes layout ===== */
 /* PROJECT POST — two-column detail section */
 .post-columns {
     display: flex;
     gap: 30px;
-    align-items: flex-start;
+    align-items: stretch; /* stretch makes spec boxes fill the same height as the image column */
     padding: 30px 50px 40px;
     border-top: 1px solid var(--border-color);
 }
@@ -947,7 +948,7 @@ footer p {
 }
 
 .detail-section ul li {
-    font-size: 14px;
+    font-size: 15px; /* tuning: spec box body text size */
     color: var(--text-color);
     line-height: 1.6;
     opacity: 0.88;
@@ -1018,12 +1019,13 @@ footer p {
     
 }
   
+/* ===== PROJECT PAGE TUNING — skills tag size ===== */
 .post-view .summary .skill {
     background-color: var(--light-background-color);
     color: var(--link-color);
     border-radius: 12px;
     padding: 5px 10px;
-    font-size: 0.9em;
+    font-size: 15px; /* tuning: skill tag font size */
 }
   
 .post-view .content {
@@ -1059,6 +1061,12 @@ footer p {
 .post-view .content  p {
     margin-bottom: 1em;
   }
+
+/* ===== PROJECT PAGE TUNING — heading spacing ===== */
+.post-view .content h2,
+.post-view .content h3 {
+    margin-top: 2rem; /* tuning: breathing room above section headings in post body */
+}
 
 .post-view .content  a:hover {
     color: #2980b9;
