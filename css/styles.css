@@ -1025,7 +1025,7 @@ footer p {
     color: var(--link-color);
     border-radius: 12px;
     padding: 5px 10px;
-    font-size: 15px; /* tuning: skill tag font size */
+    font-size: 18px; /* tuning: skill tag font size */
 }
   
 .post-view .content {
