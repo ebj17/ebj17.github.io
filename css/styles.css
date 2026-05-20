@@ -939,7 +939,7 @@ footer p {
     font-size: 20px; /* tuning: spec box title size */
     font-weight: 600;
     color: var(--text-color);
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* tuning: space between spec box heading and bullet list below */
 }
 
 .detail-section ul {
@@ -947,7 +947,7 @@ footer p {
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 5px; /* tuning: space between individual bullet items */
 }
 
 /* SPEC BOX BULLETS — list items inside Objectives / Outcomes / Technical Details */
@@ -995,7 +995,7 @@ footer p {
 .post-view .title-header  h1 {
     font-size: calc(14px + 1.0vw); /* tuning: project page title size */
     line-height: normal;
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* tuning: space between title and "Project Overview" heading below */
 }
 
 .post-view .summary img {
@@ -1010,23 +1010,25 @@ footer p {
 /* PROJECT OVERVIEW TITLE — "Project Overview" section heading */
 .post-view .summary .project-description h2 {
     font-size: 20px; /* tuning: "Project Overview" heading size */
+    margin-bottom: 6px; /* tuning: space between "Project Overview" heading and paragraph below */
 }
 
 /* PROJECT OVERVIEW — paragraph text */
 .post-view .summary .project-description {
-    margin-bottom: 10px;
+    margin-bottom: 18px; /* tuning: space between "Project Overview" block and "Skills Used" block below */
     font-size: 17px; /* tuning: description text size */
 }
 
 /* SKILLS USED TITLE — "Skills Used" section heading */
 .post-view .summary .skills-card h2 {
     font-size: 20px; /* tuning: "Skills Used" heading size */
+    margin-bottom: 6px; /* tuning: space between "Skills Used" heading and skill tags below */
 }
 
 .post-view .summary .skills-card {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 5px; /* tuning: space between "Skills Used" heading and the row of skill tags */
 }
 
 .post-view .summary .skills-list {
@@ -1079,7 +1081,7 @@ footer p {
 /* POST BODY TEXT — paragraphs in the written content section below the spec boxes */
 .post-view .content  p {
     font-size: 15px; /* tuning: post body paragraph size */
-    margin-bottom: 1em;
+    margin-bottom: 1em; /* tuning: space between paragraphs in post body */
   }
 
 /* ===== PROJECT PAGE TUNING — heading spacing ===== */
