@@ -1009,18 +1009,18 @@ footer p {
 
 /* PROJECT OVERVIEW TITLE — "Project Overview" section heading */
 .post-view .summary .project-description h2 {
-    font-size: 18px; /* tuning: "Project Overview" heading size */
+    font-size: 17px; /* tuning: "Project Overview" heading size */
 }
 
 /* PROJECT OVERVIEW — paragraph text */
 .post-view .summary .project-description {
     margin-bottom: 10px;
-    font-size: 20px; /* tuning: description text size */
+    font-size: 17px; /* tuning: description text size */
 }
 
 /* SKILLS USED TITLE — "Skills Used" section heading */
 .post-view .summary .skills-card h2 {
-    font-size: 18px; /* tuning: "Skills Used" heading size */
+    font-size: 17px; /* tuning: "Skills Used" heading size */
 }
 
 .post-view .summary .skills-card {
@@ -1043,7 +1043,7 @@ footer p {
     color: var(--link-color);
     border-radius: 12px;
     padding: 5px 10px;
-    font-size: 20px; /* tuning: skill tag font size */
+    font-size: 17px; /* tuning: skill tag font size */
 }
   
 .post-view .content {
