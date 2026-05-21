@@ -76,7 +76,7 @@ layout: wrapper
                     {% if forloop.index <= images_in_column %}
                     {% assign _i = forloop.index0 %}
                     {% assign img_scale = page.image_scales[_i] | default: "100%" %}
-                    <img src="{{ img.path }}" alt="{{ page.title }} image {{ forloop.index }}" style="--img-scale: {{ img_scale }}">
+                    <img src="{{ img.path }}" alt="{{ page.title }} image {{ forloop.index }}" style="width: {{ img_scale }}">
                     {% endif %}
                 {% endfor %}
             {% else %}
@@ -97,7 +97,7 @@ layout: wrapper
             {% if forloop.index > images_in_column %}
             {% assign _i = forloop.index0 %}
             {% assign img_scale = page.image_scales[_i] | default: "100%" %}
-            <img src="{{ img.path }}" alt="{{ page.title }} image {{ forloop.index }}" style="--img-scale: {{ img_scale }}">
+            <img src="{{ img.path }}" alt="{{ page.title }} image {{ forloop.index }}" style="width: {{ img_scale }}">
             {% endif %}
         {% endfor %}
     </div>
