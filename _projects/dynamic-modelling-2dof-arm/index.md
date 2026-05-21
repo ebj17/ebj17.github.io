@@ -24,7 +24,10 @@ main-image: /preview.png       # banner image at the top of the page (crop ratio
 image_scales:               # optional: width per gallery image in order (100% = fill container)
    - 60%                    # gallery-1
    - 60%                    # gallery-2
-
+   - 100%
+   - 100%
+   - 100%
+   - 60%
 # ── SPEC BOXES ───────────────────────────────────────────────────────────────
 objectives:                    # yellow box — what you set out to do
   - Derive equations of motion for a 2-DOF planar manipulator using Lagrangian mechanics and DH parameters.
