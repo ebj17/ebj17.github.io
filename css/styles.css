@@ -883,8 +883,9 @@ footer p {
     top: 96px;
 }
 
-.post-columns-right img {
-    width: 100%; /* default; overridden per-image via image_scales front matter inline style */
+.post-columns-right img,
+.post-columns-right video {
+    width: 100%; /* default; overridden per-item via image_scales front matter inline style */
     align-self: center;
     border-radius: 8px;
     object-fit: cover;
@@ -923,8 +924,9 @@ footer p {
     border-top: 1px solid var(--border-color);
 }
 
-.post-below-images img {
-    width: 100%; /* default; overridden per-image via image_scales front matter inline style */
+.post-below-images img,
+.post-below-images video {
+    width: 100%; /* default; overridden per-item via image_scales front matter inline style */
     justify-self: center;
     border-radius: 8px;
     object-fit: cover;

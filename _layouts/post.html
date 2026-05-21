@@ -76,7 +76,11 @@ layout: wrapper
                     {% if forloop.index <= images_in_column %}
                     {% assign _i = forloop.index0 %}
                     {% assign img_scale = page.image_scales[_i] | default: "100%" %}
+                    {% if img.extname == ".mp4" or img.extname == ".webm" or img.extname == ".mov" %}
+                    <video src="{{ img.path }}" controls playsinline style="width: {{ img_scale }}"></video>
+                    {% else %}
                     <img src="{{ img.path }}" alt="{{ page.title }} image {{ forloop.index }}" style="width: {{ img_scale }}">
+                    {% endif %}
                     {% endif %}
                 {% endfor %}
             {% else %}
@@ -97,7 +101,11 @@ layout: wrapper
             {% if forloop.index > images_in_column %}
             {% assign _i = forloop.index0 %}
             {% assign img_scale = page.image_scales[_i] | default: "100%" %}
+            {% if img.extname == ".mp4" or img.extname == ".webm" or img.extname == ".mov" %}
+            <video src="{{ img.path }}" controls playsinline style="width: {{ img_scale }}"></video>
+            {% else %}
             <img src="{{ img.path }}" alt="{{ page.title }} image {{ forloop.index }}" style="width: {{ img_scale }}">
+            {% endif %}
             {% endif %}
         {% endfor %}
     </div>
