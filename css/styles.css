@@ -884,7 +884,9 @@ footer p {
 }
 
 .post-columns-right img {
-    width: 100%;
+    display: block;
+    width: var(--img-scale, 100%); /* tuning: overridden per-image via image_scales front matter */
+    margin: 0 auto;
     border-radius: 8px;
     object-fit: cover;
     box-shadow: 0 2px 10px rgba(0,0,0,0.07);
@@ -923,7 +925,9 @@ footer p {
 }
 
 .post-below-images img {
-    width: 100%;
+    display: block;
+    width: var(--img-scale, 100%); /* tuning: overridden per-image via image_scales front matter */
+    margin: 0 auto;
     border-radius: 8px;
     object-fit: cover;
     box-shadow: 0 2px 10px rgba(0,0,0,0.07);

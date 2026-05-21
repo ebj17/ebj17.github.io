@@ -74,7 +74,8 @@ layout: wrapper
             {% if gallery_images.size > 0 %}
                 {% for img in gallery_images %}
                     {% if forloop.index <= images_in_column %}
-                    <img src="{{ img.path }}" alt="{{ page.title }} image {{ forloop.index }}">
+                    {% assign img_scale = page.image_scales[forloop.index0] | default: "100%" %}
+                    <img src="{{ img.path }}" alt="{{ page.title }} image {{ forloop.index }}" style="--img-scale: {{ img_scale }}">
                     {% endif %}
                 {% endfor %}
             {% else %}
@@ -93,7 +94,8 @@ layout: wrapper
     <div class="post-below-images" style="--below-cols: {{ images_below_per_row }}">
         {% for img in gallery_images %}
             {% if forloop.index > images_in_column %}
-            <img src="{{ img.path }}" alt="{{ page.title }} image {{ forloop.index }}">
+            {% assign img_scale = page.image_scales[forloop.index0] | default: "100%" %}
+            <img src="{{ img.path }}" alt="{{ page.title }} image {{ forloop.index }}" style="--img-scale: {{ img_scale }}">
             {% endif %}
         {% endfor %}
     </div>
