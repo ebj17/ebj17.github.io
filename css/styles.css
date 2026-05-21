@@ -858,20 +858,17 @@ footer p {
 
 
 /* ===== PROJECT PAGE TUNING — spec boxes layout ===== */
-/* PROJECT POST — two-column detail section */
+/* PROJECT POST — spec boxes row (3 boxes side by side) */
 .post-columns {
-    display: flex;
-    gap: 30px;
-    align-items: stretch; /* stretch makes spec boxes fill the same height as the image column */
-    padding: 30px 50px 40px;
+    padding: 30px 50px 20px; /* tuning: space around the spec boxes section */
     border-top: 1px solid var(--border-color);
 }
 
 .post-columns-left {
-    flex: 4;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* tuning: number of spec box columns */
+    gap: 14px; /* tuning: space between spec boxes */
+    align-items: start;
 }
 
 .post-columns-right {
@@ -959,15 +956,59 @@ footer p {
     opacity: 0.88;
 }
 
+/* GALLERY GRID — responsive image grid below the spec boxes */
+.post-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* tuning: min image width before wrapping */
+    gap: 12px; /* tuning: space between gallery images */
+    padding: 0 50px 30px;
+}
+
+.post-gallery img {
+    width: 100%;
+    aspect-ratio: 4/3; /* tuning: image crop ratio — try 16/9 or 1/1 for different shapes */
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+}
+
+.post-gallery-empty {
+    margin: 0 50px 30px;
+    aspect-ratio: 16/9;
+    border: 2px dashed var(--border-color);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--text-color);
+    opacity: 0.35;
+}
+
+.post-gallery-empty i {
+    font-size: 40px;
+}
+
+.post-gallery-empty span {
+    font-size: 14px;
+}
+
 @media (max-width: 900px) {
     .post-columns {
-        flex-direction: column;
-        padding: 20px;
+        padding: 20px 20px 10px;
     }
 
-    .post-columns-right {
-        position: static;
-        width: 100%;
+    .post-columns-left {
+        grid-template-columns: 1fr; /* stack spec boxes on smaller screens */
+    }
+
+    .post-gallery {
+        padding: 0 20px 20px;
+    }
+
+    .post-gallery-empty {
+        margin: 0 20px 20px;
     }
 }
 
