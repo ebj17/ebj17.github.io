@@ -22,6 +22,8 @@ skills:                        # pill tags shown under "Skills Used" — add or 
 # ── IMAGES ───────────────────────────────────────────────────────────────────
 main-image: /preview.png       # banner image at the top of the page (crop ratio 3:1)
 image-position: center 60%     # shifts the banner crop vertically — e.g. "center 40%" moves it up
+# images_in_column: 2         # optional: how many gallery images appear in the right column (rest flow below)
+# images_below_per_row: 2     # optional: columns in the below grid (default 2)
 
 # ── SPEC BOXES ───────────────────────────────────────────────────────────────
 objectives:                    # yellow box — what you set out to do
