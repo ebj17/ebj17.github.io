@@ -2,8 +2,8 @@
 layout: post
 
 # ── TITLE & DESCRIPTION ──────────────────────────────────────────────────────
-title: Dynamic Modelling and Control of a 2-DOF Robotic Arm   # h1 shown at the top of the page
-description: Modelled a two-link robotic arm using Lagrangian dynamics and implemented the nonlinear system in MATLAB Simulink, with a tuned PID controller for trajectory tracking under varying dynamic effects.
+title: Dynamic Modelling and PID Control of a 2-DOF Robotic Arm   # h1 shown at the top of the page
+description: Derived the full nonlinear equations of motion for a two-link planar manipulator using the Lagrangian-Euler formulation and implemented the dynamic model in MATLAB Simulink. A PID controller tuned via the Ziegler-Nichols method achieved stable closed-loop trajectory tracking across both joints under coupled inertial, Coriolis, and gravitational loading.
 # ↑ paragraph shown under "Project Overview"
 
 # ── SKILLS ───────────────────────────────────────────────────────────────────
@@ -22,19 +22,24 @@ main-image: /preview.png       # banner image at the top of the page (crop ratio
 
 # ── SPEC BOXES ───────────────────────────────────────────────────────────────
 objectives:                    # yellow box — what you set out to do
-  - Model a two-link robotic arm using Lagrangian mechanics to derive the full equations of motion.
-  - Implement the nonlinear dynamic system in MATLAB Simulink for simulation and analysis.
-  - Design and tune a PID controller for accurate trajectory tracking under varying dynamic conditions.
+  - Derive equations of motion for a 2-DOF planar manipulator using Lagrangian mechanics and DH parameters.
+  - Implement the nonlinear dynamic model in MATLAB Simulink and validate against expected free-response behaviour.
+  - Linearise the coupled system via feedback linearisation to enable independent per-joint controller design.
+  - Tune and evaluate closed-loop PID trajectory tracking performance on the full nonlinear plant.
 
 outcomes:                      # green box — key results and achievements
-  - Successfully derived and implemented the full nonlinear dynamics of a 2-DOF arm in Simulink.
-  - Achieved stable trajectory tracking with the tuned PID controller across varying inertia and Coriolis conditions.
-  - Evaluated controller robustness against gravitational and inertial parameter variations.
+  - Derived and implemented the complete D(q)q̈ + C(q,q̇)q̇ + G(q) = τ model from scratch, confirmed by periodic free-response oscillations matching theoretical predictions.
+  - Identified and resolved a critical feedback path error — connecting feedback directly from joint angles q₁/q₂ produced instability; rerouting from the dynamic model output restored correct closed-loop behaviour.
+  - Reduced joint overshoot by manually increasing the derivative gain from the ZN-tuned value of 6.5 to 35, highlighting PID sensitivity to derivative action in nonlinear systems.
+  - Feedback linearisation successfully decoupled both joints into independent double integrators (G(s) = 1/s²), though the inherent simplification introduced unmodelled dynamics that limited tracking precision on the full plant.
 
 technical:                     # red box — technologies, methods, and implementation details
-  - Lagrangian dynamics formulation used to derive equations of motion for the two-link manipulator.
-  - Nonlinear plant implemented in MATLAB Simulink with parameterised inertia, Coriolis, and gravity terms.
-  - PID controller designed and tuned for joint-space trajectory tracking with performance evaluation under varying loads.
+  - DH convention for joint frame definition; homogeneous transformation matrices derived per link.
+  - Lagrangian formulation: kinetic (translational + rotational) and gravitational potential energy per link.
+  - Ziegler-Nichols second method: Ku = 9.07, Tu = 9.56s → Kp = 5.44, Ki = 1.14, Kd = 6.5 (manually refined to Kd = 35).
+  - Simulink: MATLAB Function block encoding D, C, G matrices; integrator chain for state recovery; dual PID blocks in closed loop.
+  - Limitation: feedback linearisation assumes perfect model knowledge — parameter uncertainty degrades tracking on the physical plant.
+  - Future work: computed torque control or MPC would handle residual nonlinearities more robustly.
 
 # ── GALLERY ──────────────────────────────────────────────────────────────────
 # Drop any image named gallery-1.jpg, gallery-2.jpg, gallery-3.jpg etc. into
