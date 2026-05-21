@@ -30,8 +30,9 @@ layout: wrapper
         </div>
     </div>
 
-    {% if page.objectives or page.outcomes or page.technical %}
+    {% if page.objectives or page.outcomes or page.technical or gallery_images.size > 0 %}
     <div class="post-columns">
+
         <div class="post-columns-left">
             {% if page.objectives %}
             <div class="detail-section objectives">
@@ -66,19 +67,20 @@ layout: wrapper
             </div>
             {% endif %}
         </div>
-    </div>
-    {% endif %}
 
-    {% if gallery_images.size > 0 %}
-    <div class="post-gallery">
-        {% for img in gallery_images %}
-        <img src="{{ img.path }}" alt="{{ page.title }} image {{ forloop.index }}">
-        {% endfor %}
-    </div>
-    {% else %}
-    <div class="post-gallery-empty">
-        <i class="fa-regular fa-image"></i>
-        <span>Images coming soon</span>
+        <div class="post-columns-right">
+            {% if gallery_images.size > 0 %}
+                {% for img in gallery_images %}
+                <img src="{{ img.path }}" alt="{{ page.title }} image {{ forloop.index }}">
+                {% endfor %}
+            {% else %}
+            <div class="post-columns-right-empty">
+                <i class="fa-regular fa-image"></i>
+                <span>Images coming soon</span>
+            </div>
+            {% endif %}
+        </div>
+
     </div>
     {% endif %}
 
