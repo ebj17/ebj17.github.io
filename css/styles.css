@@ -22,6 +22,7 @@ html {
 }
 
 body {
+    zoom: 0.75; /* GLOBAL SCALE — tuning: reduce to shrink everything, increase to grow (0.67 = browser 67% zoom) */
     padding: 0 50px;
     font-family: 'Poppins', sans-serif;
     background-color: var(--background-color);
@@ -995,7 +996,7 @@ footer p {
 .post-view .title-header  h1 {
     font-size: calc(14px + 1.0vw); /* tuning: project page title size */
     line-height: normal;
-    margin-bottom: 10px; /* tuning: space between title and "Project Overview" heading below */
+    margin-bottom: 15px; /* tuning: space between title and "Project Overview" heading below */
 }
 
 .post-view .summary img {
