@@ -26,7 +26,6 @@ image_scales:               # optional: width per gallery image in order (100% =
    - 60%                    # gallery-2
    - 100%
    - 100%
-   - 100%
    - 60%
 # ── SPEC BOXES ───────────────────────────────────────────────────────────────
 objectives:                    # yellow box — what you set out to do
