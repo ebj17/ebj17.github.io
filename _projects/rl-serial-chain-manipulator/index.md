@@ -29,19 +29,19 @@ objectives:                    # yellow box — what you set out to do
   - Evaluate policy performance by tracking euclidean distance to target and reward per timestep during testing.
 
 outcomes:                      # green box — key results and achievements
-  - Designed the full environment from scratch: 17-dimensional observation space (7 joint positions + 7 joint velocities + 3 target coordinates), 7-dimensional continuous action space mapped to joint angle targets in [-π, π].
-  - Trained a two-phase policy: 3M timesteps on base reward, followed by 1M additional steps with the velocity penalty introduced — this staged approach improved motion smoothness without sacrificing convergence speed.
+  - "Designed the full environment from scratch: 17-dimensional observation space (7 joint positions + 7 joint velocities + 3 target coordinates), 7-dimensional continuous action space mapped to joint angle targets in [-π, π]."
+  - "Trained a two-phase policy: 3M timesteps on base reward, followed by 1M additional steps with the velocity penalty introduced — this staged approach improved motion smoothness without sacrificing convergence speed."
   - Achieved consistent reduction in euclidean distance to target across test episodes, with reward per timestep stabilising at positive values, confirming learned reach behaviour.
   - Identified that the policy was trained on a fixed target only; generalisation to random target positions remains an open challenge and is the most significant limitation of the current model.
-  - Future work: curriculum learning from fixed to randomised targets, addition of orientation control for the end-effector, and sim-to-real transfer using domain randomisation.
+  - "Future work: curriculum learning from fixed to randomised targets, addition of orientation control for the end-effector, and sim-to-real transfer using domain randomisation."
 
 technical:                     # red box — technologies, methods, and implementation details
-  - Robot: Kuka iiwa 7-DOF (PyBullet built-in URDF, fixed base). Simulation at 240 Hz; episode length 6500 timesteps.
-  - Observation: 7 joint positions + 7 joint velocities + 3 target XYZ (dim=17). Action: 7 target joint angles ∈ [-π, π] (continuous).
-  - Reward: −euclidean_distance(end_effector, target) − velocity_penalty (applied when any joint velocity > 3 rad/s).
-  - Algorithm: PPO (Stable Baselines3), MlpPolicy. Network: [512, 512, 256, 128] actor and critic, ReLU — bottleneck architecture to encourage compact state representations.
-  - Learning rate: 0.0001; total training: 4M steps (3M base + 1M with penalty). Checkpoints saved every 100k steps; monitored via TensorBoard.
-  - Limitation: fixed target only; no orientation control; no sim-to-real pipeline.
+  - "Robot: Kuka iiwa 7-DOF (PyBullet built-in URDF, fixed base). Simulation at 240 Hz; episode length 6500 timesteps."
+  - "Observation: 7 joint positions + 7 joint velocities + 3 target XYZ (dim=17). Action: 7 target joint angles ∈ [-π, π] (continuous)."
+  - "Reward: −euclidean_distance(end_effector, target) − velocity_penalty (applied when any joint velocity > 3 rad/s)."
+  - "Algorithm: PPO (Stable Baselines3), MlpPolicy. Network: [512, 512, 256, 128] actor and critic, ReLU — bottleneck architecture to encourage compact state representations."
+  - "Learning rate: 0.0001; total training: 4M steps (3M base + 1M with penalty). Checkpoints saved every 100k steps; monitored via TensorBoard."
+  - "Limitation: fixed target only; no orientation control; no sim-to-real pipeline."
 
 # ── GALLERY ──────────────────────────────────────────────────────────────────
 # Drop any image named gallery-1.jpg, gallery-2.jpg, gallery-3.jpg etc. into

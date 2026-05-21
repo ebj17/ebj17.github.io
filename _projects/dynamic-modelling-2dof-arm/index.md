@@ -35,11 +35,11 @@ outcomes:                      # green box — key results and achievements
 
 technical:                     # red box — technologies, methods, and implementation details
   - DH convention for joint frame definition; homogeneous transformation matrices derived per link.
-  - Lagrangian formulation: kinetic (translational + rotational) and gravitational potential energy per link.
-  - Ziegler-Nichols second method: Ku = 9.07, Tu = 9.56s → Kp = 5.44, Ki = 1.14, Kd = 6.5 (manually refined to Kd = 35).
-  - Simulink: MATLAB Function block encoding D, C, G matrices; integrator chain for state recovery; dual PID blocks in closed loop.
-  - Limitation: feedback linearisation assumes perfect model knowledge — parameter uncertainty degrades tracking on the physical plant.
-  - Future work: computed torque control or MPC would handle residual nonlinearities more robustly.
+  - "Lagrangian formulation: kinetic (translational + rotational) and gravitational potential energy per link."
+  - "Ziegler-Nichols second method: Ku = 9.07, Tu = 9.56s → Kp = 5.44, Ki = 1.14, Kd = 6.5 (manually refined to Kd = 35)."
+  - "Simulink: MATLAB Function block encoding D, C, G matrices; integrator chain for state recovery; dual PID blocks in closed loop."
+  - "Limitation: feedback linearisation assumes perfect model knowledge — parameter uncertainty degrades tracking on the physical plant."
+  - "Future work: computed torque control or MPC would handle residual nonlinearities more robustly."
 
 # ── GALLERY ──────────────────────────────────────────────────────────────────
 # Drop any image named gallery-1.jpg, gallery-2.jpg, gallery-3.jpg etc. into
