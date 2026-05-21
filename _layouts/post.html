@@ -5,6 +5,8 @@ layout: wrapper
 {% assign folder_path = page.path | split: "/" | slice: 0, 2 | join: "/" %}
 {% assign folder_prefix = "/" | append: folder_path | append: "/" %}
 {% assign gallery_images = site.static_files | where_exp: "file", "file.path contains folder_prefix" | where_exp: "file", "file.name contains 'gallery'" | sort: "name" %}
+{% assign images_in_column = page.images_in_column | default: gallery_images.size %}
+{% assign images_below_per_row = page.images_below_per_row | default: 2 %}
 
 <div class="post-view">
     <div class="summary">
@@ -71,7 +73,9 @@ layout: wrapper
         <div class="post-columns-right">
             {% if gallery_images.size > 0 %}
                 {% for img in gallery_images %}
-                <img src="{{ img.path }}" alt="{{ page.title }} image {{ forloop.index }}">
+                    {% if forloop.index <= images_in_column %}
+                    <img src="{{ img.path }}" alt="{{ page.title }} image {{ forloop.index }}">
+                    {% endif %}
                 {% endfor %}
             {% else %}
             <div class="post-columns-right-empty">
@@ -81,6 +85,17 @@ layout: wrapper
             {% endif %}
         </div>
 
+    </div>
+    {% endif %}
+
+    {% assign below_count = gallery_images.size | minus: images_in_column %}
+    {% if below_count > 0 %}
+    <div class="post-below-images" style="--below-cols: {{ images_below_per_row }}">
+        {% for img in gallery_images %}
+            {% if forloop.index > images_in_column %}
+            <img src="{{ img.path }}" alt="{{ page.title }} image {{ forloop.index }}">
+            {% endif %}
+        {% endfor %}
     </div>
     {% endif %}
 
