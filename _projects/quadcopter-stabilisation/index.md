@@ -25,7 +25,7 @@ image-position: center 60%     # shifts the banner crop vertically — e.g. "cen
 # images_in_column: 2         # optional: how many gallery images appear in the right column (rest flow below)
 # images_below_per_row: 2     # optional: columns in the below grid (default 2)
 image_scales:               # optional: width per gallery image in order (100% = fill container)
-   - 80%                    # gallery-1
+   - 70%                    # gallery-1
 #   - 100%                    # gallery-2
 
 # ── SPEC BOXES ───────────────────────────────────────────────────────────────
