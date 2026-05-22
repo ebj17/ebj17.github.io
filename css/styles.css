@@ -657,14 +657,20 @@ footer p {
     gap: 20px;
 }
 
-.about-page-photo {
+.about-page-photos {
+    display: flex;
+    gap: 14px;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 24px;
+}
+
+.about-page-photo {
+    flex: 1;
 }
 
 .about-page-photo img {
     width: 100%;
-    max-height: 680px; /* tuning: about page photo height */
+    height: 520px; /* tuning: about page photo height */
     object-fit: cover;
     object-position: center 40%; /* tuning: about page photo vertical crop position */
     border-radius: 12px;
