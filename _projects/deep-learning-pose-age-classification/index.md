@@ -28,23 +28,23 @@ images_in_column: 2         # optional: how many gallery images appear in the ri
 
 # ── SPEC BOXES ───────────────────────────────────────────────────────────────
 objectives:                    # yellow box — what you set out to do
-  - Implement an OpenPose-based classifier for automated posture recognition with skeleton overlay visualisation.
+  - Develop a rule-based standing/sitting classifier using hip-knee angle geometry derived from OpenPose keypoints.
   - Train a convolutional neural network for facial age classification using live video input.
-  - Integrate OpenCV for real-time image processing and on-screen display of classification predictions.
 
 outcomes:                      # green box — key results and achievements
   - Deployed a working pose classifier with skeleton overlay for real-time posture recognition from video.
-  - CNN achieved reliable facial age classification on live camera feed with real-time prediction display.
+  - CNN achieved 77% overall test accuracy for facial age classification, with real-time prediction display on live camera feed.
   - Full pipeline from frame capture to classification and visualisation integrated in Jupyter Notebook.
 
 technical:                     # red box — technologies, methods, and implementation details
-  - OpenPose-based skeleton extraction used as input features for an automated posture recognition classifier in Python.
-  - CNN trained for multi-class facial age classification, evaluated on live video feed from an external camera.
+  - "Rule-based standing/sitting classifier computed hip-to-knee angles from OpenPose keypoints, with standing defined above 70° and sitting below 40°."
+  - "CNN trained for multi-class facial age classification on 33,485 images across 5 age bands, with live camera feed prediction."
   - OpenCV used for frame capture, image preprocessing, and real-time overlay of classification results.
 
 limitations:                   # blue box — known constraints and future directions
-  - Placeholder limitation.
-  - Placeholder future improvement.
+  - "Age model is biased toward the 0–18 class due to training set imbalance; most other age bands scored below 60% precision."
+  - Pose classifier uses fixed angle thresholds and was validated on two images only, limiting generalisation to varied camera angles or partial occlusion.
+  - "Future work: collect balanced age-class data, deepen CNN architecture, and extend pose rules to additional postures beyond sitting/standing."
 
 # ── GALLERY ──────────────────────────────────────────────────────────────────
 # Drop any image named gallery-1.jpg, gallery-2.jpg, gallery-3.jpg etc. into
