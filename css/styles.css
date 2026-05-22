@@ -407,59 +407,69 @@ nav .mobile-nav {
 /* SECTION 3: SKILLS */
 .skills-section {
     margin-bottom: 100px;
-    display:flex;
-    flex-direction: column;
 }
 
 .skills-section h2 {
     font-size: 34px;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
-
-
-
-.skills-section .skill-categories {
-    list-style: none;
-    padding-left: 0;
-   }
-
-.skills-section .skill-categories .skills-card  span{
-    margin-bottom: 10px;
+/* Tab nav — category buttons */
+.skills-tab-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
 }
 
-.skills-section .skill-categories .skills-card {
-    margin-bottom: 15px;
-    padding: 15px;
-    border-radius: 15px;
-    border: 1px solid rgba(0, 0, 0, 0.05);    
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
-                  0 2px 4px -1px rgba(0, 0, 0, 0.06);
-   }
+.skills-tab-btn {
+    background: transparent;
+    border: 1.5px solid var(--border-color);
+    color: var(--text-color);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.18s, border-color 0.18s, color 0.18s;
+    font-family: inherit;
+}
 
-.skills-section .skill-categories .category-label {
-    font-size: 20px;
-    display: grid; 
+.skills-tab-btn:hover {
+    border-color: var(--link-color);
+    color: var(--link-color);
+}
+
+.skills-tab-btn.active {
+    background-color: var(--light-background-color);
+    border-color: var(--link-color);
+    color: var(--link-color);
     font-weight: 600;
 }
 
-.skills-section .skill-categories .skills-list {
-    display: flex; 
+/* Tab panels — skill pills */
+.skills-tab-panel {
+    display: none;
     flex-wrap: wrap;
-    padding-left: 0; 
-    margin-right: 10px;
     gap: 8px;
-    }
+    animation: skillsFadeIn 0.18s ease;
+}
 
-.skills-section .skill-categories .skill {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5px 14px;
+.skills-tab-panel.active {
+    display: flex;
+}
+
+@keyframes skillsFadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.skills-tab-panel .skill {
     background-color: var(--light-background-color);
     color: var(--link-color);
     border-radius: 20px;
-    font-size: 20px; /* tuning: skills pill font size — matches category label */
+    padding: 5px 14px;
+    font-size: 16px;
     font-weight: 500;
 }
 
@@ -1432,11 +1442,16 @@ footer p {
     
     /*SECTION 3:Skills */
     .skills-section {
-        padding: 0 5px
+        padding: 0 5px;
     }
-   
-    .skills-section span {
-        font-size: 16px;
+
+    .skills-tab-btn {
+        font-size: 13px;
+        padding: 5px 12px;
+    }
+
+    .skills-tab-panel .skill {
+        font-size: 14px;
     }
 
     /*SECTION 4: Contact */
