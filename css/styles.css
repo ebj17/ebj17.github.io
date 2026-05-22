@@ -454,11 +454,12 @@ nav .mobile-nav {
     display:flex;
     justify-content: center;
     align-items: center;
-    padding: 3px 8px;
-    background-color: var(--light-background-color);
-    color: var(--link-color);
-    border-radius: 10px;
-    font-size: 14px;
+    padding: 5px 14px;
+    background-color: #2563eb; /* tuning: skills pill background colour */
+    color: #ffffff; /* tuning: skills pill text colour */
+    border-radius: 20px;
+    font-size: 15px; /* tuning: skills pill font size */
+    font-weight: 500;
 }
 
 

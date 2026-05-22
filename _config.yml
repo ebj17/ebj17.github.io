@@ -47,36 +47,38 @@ external-links:    # input only your own url slug. The icons with missing entrie
 skills:
   - category: Programming
     tools:
+    - "Python (pandas, NumPy)"
     - C
     - C++
-    - Python
-    - ROS2
     - Git
     - Object Oriented Programming
   - category: Robotics and Control
     tools:
+    - Linux/Ubuntu
+    - "ROS2 (rclcpp, rclpy, MoveIt2, ros2_control)"
     - MATLAB/Simulink
     - Adaptive Nonlinear Control
     - System Identification
     - State-Space Modelling
     - Motion Planning
-    - PyBullet
   - category: Machine Learning
     tools:
     - Reinforcement Learning
+    - OpenCV
+    - OpenPose
     - PyTorch
     - TensorFlow
     - Gymnasium
     - Stable Baselines3
+    - PyBullet
   - category: Embedded Systems & DSP
     tools:
     - Embedded Programming
-    - Linux/Ubuntu
     - Digital Signal Processing
     - Microcontroller Integration
     - Sensor Interfacing
     - Sensor Fusion
-  - category: 3D Modelling
+  - category: CAD
     tools:
     - Siemens NX
     - Creo Parametric
@@ -92,6 +94,11 @@ skills:
     - LTSpice
     - PCB Prototyping
     - Analog Circuit Design
+  - category: Soft Skills
+    tools:
+    - Analytical problem-solving
+    - Strong collaborator
+    - Multidisciplinary teamwork
 
 
 # Contact Form Setup. Setup an account and copy over the key. When someone fills out the form, it will be received in your email.
