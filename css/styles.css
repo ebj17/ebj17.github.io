@@ -659,18 +659,15 @@ footer p {
 
 .about-page-photos {
     display: flex;
+    flex-direction: column;
     gap: 14px;
     width: 100%;
     margin-top: 24px;
 }
 
-.about-page-photo {
-    flex: 1;
-}
-
 .about-page-photo img {
     width: 100%;
-    height: 520px; /* tuning: about page photo height */
+    height: 680px; /* tuning: about page photo height */
     object-fit: cover;
     object-position: center 40%; /* tuning: about page photo vertical crop position */
     border-radius: 12px;
