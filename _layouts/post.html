@@ -32,7 +32,7 @@ layout: wrapper
         </div>
     </div>
 
-    {% if page.objectives or page.outcomes or page.technical or gallery_images.size > 0 %}
+    {% if page.objectives or page.outcomes or page.technical or page.limitations or gallery_images.size > 0 %}
     <div class="post-columns">
 
         <div class="post-columns-left">
@@ -63,6 +63,17 @@ layout: wrapper
                 <h2>Technical Details</h2>
                 <ul>
                     {% for item in page.technical %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+
+            {% if page.limitations %}
+            <div class="detail-section limitations">
+                <h2>Limitations &amp; Future Improvements</h2>
+                <ul>
+                    {% for item in page.limitations %}
                     <li>{{ item }}</li>
                     {% endfor %}
                 </ul>

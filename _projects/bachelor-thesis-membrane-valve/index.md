@@ -44,6 +44,10 @@ technical:                     # red box — technologies, methods, and implemen
   - Placeholder — important implementation detail.
   - Placeholder — tools, frameworks, or algorithms applied.
 
+limitations:                   # blue box — known constraints and future directions
+  - Placeholder limitation.
+  - Placeholder future improvement.
+
 # ── GALLERY ──────────────────────────────────────────────────────────────────
 # Drop any image named gallery-1.jpg, gallery-2.jpg, gallery-3.jpg etc. into
 # this project folder — they appear automatically in order, no edits needed here.

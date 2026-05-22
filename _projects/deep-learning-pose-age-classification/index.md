@@ -42,6 +42,10 @@ technical:                     # red box — technologies, methods, and implemen
   - CNN trained for multi-class facial age classification, evaluated on live video feed from an external camera.
   - OpenCV used for frame capture, image preprocessing, and real-time overlay of classification results.
 
+limitations:                   # blue box — known constraints and future directions
+  - Placeholder limitation.
+  - Placeholder future improvement.
+
 # ── GALLERY ──────────────────────────────────────────────────────────────────
 # Drop any image named gallery-1.jpg, gallery-2.jpg, gallery-3.jpg etc. into
 # this project folder — they appear automatically in order, no edits needed here.

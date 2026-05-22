@@ -956,6 +956,11 @@ footer p {
     border-left-color: #e11d48; /* tuning: technical details stripe colour */
 }
 
+.detail-section.limitations {
+    background-color: #eff6ff; /* tuning: limitations box background */
+    border-left-color: #2563eb; /* tuning: limitations stripe colour */
+}
+
 /* SPEC BOX TITLE — "Objectives", "Outcomes & Contributions", "Technical Details" heading */
 .detail-section h2 {
     font-size: 20px; /* tuning: spec box title size */

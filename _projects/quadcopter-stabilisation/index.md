@@ -42,7 +42,6 @@ outcomes:                      # green box — key results and achievements
   - LQR pitch and roll step responses settled in under 0.5 seconds for a 1 radian input; yaw deliberately tuned slower (~1 second) to account for magnetometer calibration imperfections.
   - Drone frame 3D-printed in PLA and structurally validated via ANSYS FEM with a safety factor above 2, confirmed capable of withstanding operational motor loads.
   - "Physical hover was not achieved: ESC calibration consumed 4 days due to poor documentation, motor shipment delays pushed testing to the final weeks, and controller tuning on the real drone could not be finalised — gimbal testing confirmed correct disturbance response but oscillation at higher gains."
-  - "Future work: finalise physical tuning using the established Q-matrix strategy, extend to full trajectory tracking with LQI, and investigate nonlinear/adaptive control for coupled rotational dynamics."
 
 technical:                     # red box — technologies, methods, and implementation details
   - "Plant: nonlinear underactuated MIMO system, 6-DOF, linearised around hover equilibrium; state vector extended to 12 states for LQI with integral error augmentation."
@@ -51,7 +50,12 @@ technical:                     # red box — technologies, methods, and implemen
   - "Hardware: BeagleBone Blue MCU, Ethix 1507 2800KV brushless motors, HQProp 3x3x3 propellers, custom ESC interface at 50 Hz PWM."
   - "Simulation: full nonlinear Simulink model with Gaussian process and measurement noise; 3D visualisation block included."
   - "FEM: ANSYS Workbench static structural analysis; safety factor > 2 confirmed under operational thrust loads."
-  - "Limitation: linearisation valid only near hover — large angle manoeuvres degrade model accuracy; Kalman optimality assumes Gaussian noise which does not fully reflect real IMU characteristics."
+
+limitations:                   # blue box — known constraints and future directions
+  - Linearisation holds only near the hover equilibrium — large-angle manoeuvres reduce model fidelity and may destabilise the controller.
+  - Kalman filter optimality assumes Gaussian noise; real IMU noise characteristics deviate from this, limiting estimator precision.
+  - Physical hover could not be finalised within the project timeline due to ESC calibration delays and late motor delivery.
+  - "Future work: finalise physical tuning using the established Q-matrix strategy, extend to full trajectory tracking with LQI, and investigate nonlinear or adaptive control for coupled rotational dynamics."
 
 # ── GALLERY ──────────────────────────────────────────────────────────────────
 # Drop any image named gallery-1.jpg, gallery-2.jpg, gallery-3.jpg etc. into

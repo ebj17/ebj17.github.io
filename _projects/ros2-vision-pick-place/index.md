@@ -50,8 +50,6 @@ outcomes:                      # green box — key results and achievements
   - Designed and implemented object_detector.py — a Python rclpy node publishing a hardcoded target pose on /detected_object_pose every second alongside a red cube Marker for RViz2 visualisation; architecture is camera-ready — replacing the hardcoded pose with an OpenCV depth camera subscriber requires no changes to downstream nodes
   - Implemented moveit_controller.cpp — receives the detected pose, spins MoveIt 2 in a separate thread to keep callbacks live, calls MoveGroupInterface.setPoseTarget() with the Pilz PTP planner, and executes the planned trajectory; resolved a critical configuration issue where MoveGroupInterface requires kinematics.yaml on its own node's parameter server, not just on move_group — fixed via a custom launch file passing robot_description, robot_description_semantic, and kinematics parameters explicitly
   - Verified smooth S-curve joint trajectories across all 7 joints during execution using PlotJuggler streaming /joint_states at 225Hz
-  - "Limitation: object position is hardcoded in the vision node — a real pipeline would use OpenCV colour segmentation on a depth camera topic to compute the 3D pose; Gazebo GUI disabled on WSL2 due to GPU constraints, physics ran headless with RViz2 as the sole visualiser"
-  - "Future work: replace hardcoded pose with live OpenCV detection from a simulated depth camera in Gazebo; add collision objects to the planning scene; extend to a full pick-and-place sequence with gripper control"
 
 technical:                     # red box — technologies, methods, and implementation details
   - "Robot: Kuka iiwa 7-DOF (ICube Robotics iiwa_ros2 community URDF/Xacro)"
@@ -67,6 +65,12 @@ technical:                     # red box — technologies, methods, and implemen
   - "Telemetry: PlotJuggler streaming /joint_states; smooth S-curve trajectories confirmed across all 7 joints"
   - "Known issues resolved: Miniconda Python conflict (PATH fix), MoveGroupInterface kinematics parameter scoping (custom launch file), Gazebo GUI crash on WSL2 (headless gzserver)"
   - "GitHub: https://github.com/ebj17"
+
+limitations:                   # blue box — known constraints and future directions
+  - Object position is hardcoded in the vision node — a real pipeline would use OpenCV colour segmentation on a depth camera topic to compute the 3D pose.
+  - Gazebo GUI disabled on WSL2 due to GPU constraints; physics ran headless with RViz2 as the sole visualiser, preventing full visual validation.
+  - No collision objects added to the MoveIt 2 planning scene — the planner cannot currently avoid obstacles in the workspace.
+  - "Future work: replace hardcoded pose with live OpenCV detection from a simulated depth camera in Gazebo; add collision objects to the planning scene; extend to a full pick-and-place sequence with gripper control."
 
 # ── GALLERY ──────────────────────────────────────────────────────────────────
 # Drop any image named gallery-1.jpg, gallery-2.jpg, gallery-3.jpg etc. into

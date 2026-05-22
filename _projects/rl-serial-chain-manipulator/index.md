@@ -39,7 +39,6 @@ outcomes:                      # green box — key results and achievements
   - "Trained a two-phase policy: 3M timesteps on base reward, followed by 1M additional steps with the velocity penalty introduced — this staged approach improved motion smoothness without sacrificing convergence speed."
   - Achieved consistent reduction in euclidean distance to target across test episodes, with reward per timestep stabilising at positive values, confirming learned reach behaviour.
   - Identified that the policy was trained on a fixed target only; generalisation to random target positions remains an open challenge and is the most significant limitation of the current model.
-  - "Future work: curriculum learning from fixed to randomised targets, addition of orientation control for the end-effector, and sim-to-real transfer using domain randomisation."
 
 technical:                     # red box — technologies, methods, and implementation details
   - "Robot: Kuka iiwa 7-DOF (PyBullet built-in URDF, fixed base). Simulation at 240 Hz; episode length 6500 timesteps."
@@ -47,7 +46,12 @@ technical:                     # red box — technologies, methods, and implemen
   - "Reward: −euclidean_distance(end_effector, target) − velocity_penalty (applied when any joint velocity > 3 rad/s)."
   - "Algorithm: PPO (Stable Baselines3), MlpPolicy. Network: [512, 512, 256, 128] actor and critic, ReLU — bottleneck architecture to encourage compact state representations."
   - "Learning rate: 0.0001; total training: 4M steps (3M base + 1M with penalty). Checkpoints saved every 100k steps; monitored via TensorBoard."
-  - "Limitation: fixed target only; no orientation control; no sim-to-real pipeline."
+
+limitations:                   # blue box — known constraints and future directions
+  - Policy trained on a single fixed target — generalisation to randomised target positions has not been demonstrated.
+  - No end-effector orientation control; the agent controls only positional reach, not full 6-DOF pose.
+  - No sim-to-real pipeline — domain randomisation and physical deployment remain unimplemented.
+  - "Future work: curriculum learning from fixed to randomised targets, orientation control for the end-effector, and sim-to-real transfer using domain randomisation."
 
 # ── GALLERY ──────────────────────────────────────────────────────────────────
 # Drop any image named gallery-1.jpg, gallery-2.jpg, gallery-3.jpg etc. into

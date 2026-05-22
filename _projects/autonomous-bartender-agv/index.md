@@ -34,15 +34,19 @@ objectives:                    # yellow box — what you set out to do
   - Integrate load cell sensing for automatic drink detection and ultrasonic sensors for obstacle avoidance.
 
 outcomes:                      # green box — key results and achievements
-  - Successfully built and demonstrated a tracked AGV delivering beverages autonomously along a bar table.
-  - Dual Arduino & ESP8266 setup enabled reliable distributed control and wireless communication.
-  - Load cell integration triggered automatic initialisation upon drink placement, streamlining operation.
+  - Successfully built and demonstrated an autonomous tracked AGV 
+  - Dual Arduino & ESP8266 setup enabled reliable distributed control and wireless communication signalling to the device when to start operation and to what direction.
+  - Load cell integration triggered automatic initialisation upon drink placement, streamlining operation and drinkless delivery.
 
 technical:                     # red box — technologies, methods, and implementation details
-  - Dual microcontroller architecture using Arduino and ESP8266 for distributed control and real-time communication.
-  - PWM-based motor control programmed in C++ for precise tracked movement along a defined path.
+  - Dual microcontroller architecture using Arduino Uno and ESP8266.
+  - PWM-based motor control programmed in C++ for precise tracked movement.
   - Ultrasonic sensor array used for real-time obstacle detection and avoidance during navigation.
   - Load cell integrated to automatically detect drink placement and trigger the delivery sequence.
+
+limitations:                   # blue box — known constraints and future directions
+  - Placeholder limitation.
+  - Placeholder future improvement.
 
 # ── GALLERY ──────────────────────────────────────────────────────────────────
 # Drop any image named gallery-1.jpg, gallery-2.jpg, gallery-3.jpg etc. into
