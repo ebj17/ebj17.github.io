@@ -29,27 +29,24 @@ image_scales:               # optional: width per gallery image in order (100% =
    - 60%
 # ── SPEC BOXES ───────────────────────────────────────────────────────────────
 objectives:                    # yellow box — what you set out to do
-  - Derive equations of motion for a 2-DOF planar manipulator using Lagrangian mechanics and DH parameters.
-  - Implement the nonlinear dynamic model in MATLAB Simulink and validate against expected free-response behaviour.
-  - Linearise the coupled system via feedback linearisation to enable independent per-joint controller design.
-  - Tune and evaluate closed-loop PID trajectory tracking performance on the full nonlinear plant.
+  - Derive and simulate the dynamic model of a 2-DOF planar robotic arm using the Lagrangian-Euler method.
+  - Design and tune a PID controller to regulate joint angles, benchmarked against a sinusoidal set-point trajectory.
 
 outcomes:                      # green box — key results and achievements
-  - Derived and implemented the complete D(q)q̈ + C(q,q̇)q̇ + G(q) = τ model from scratch, confirmed by periodic free-response oscillations matching theoretical predictions.
-  - Identified and resolved a critical feedback path error — connecting feedback directly from joint angles q₁/q₂ produced instability; rerouting from the dynamic model output restored correct closed-loop behaviour.
-  - Reduced joint overshoot by manually increasing the derivative gain from the ZN-tuned value of 6.5 to 35, highlighting PID sensitivity to derivative action in nonlinear systems.
-  - Feedback linearisation successfully decoupled both joints into independent double integrators (G(s) = 1/s²), though the inherent simplification introduced unmodelled dynamics that limited tracking precision on the full plant.
+  - Derived the full dynamic model in matrix form, implementing the inertia, Coriolis/centrifugal and gravitational matrices in MATLAB/Simulink.
+  - Simulated free-running nonlinear behaviour of both joints over 10 seconds, confirming periodic oscillations consistent with an uncontrolled dynamic system.
+  - Successfully implemented two decoupled PID controllers on the linearized system, achieving close set-point tracking after tuning.
 
 technical:                     # red box — technologies, methods, and implementation details
-  - DH convention for joint frame definition; homogeneous transformation matrices derived per link.
-  - "Lagrangian formulation: kinetic (translational + rotational) and gravitational potential energy per link."
-  - "Ziegler-Nichols second method: Ku = 9.07, Tu = 9.56s → Kp = 5.44, Ki = 1.14, Kd = 6.5 (manually refined to Kd = 35)."
-  - "Simulink: MATLAB Function block encoding D, C, G matrices; integrator chain for state recovery; dual PID blocks in closed loop."
+  - Used Denavit-Hartenberg convention to derive homogeneous transformation matrices and extract centre-of-mass position vectors.
+  - Applied feedback linearization to decouple the two joints, reducing the system to two independent double-integrator plants with transfer function G(s) = 1/s².
+  - "Tuned PID gains using the Ziegler-Nichols second method, with Ku = 9.07 and Tu = 9.56s, yielding Kp = 5.44, Ki = 1.14 and Kd = 6.5 (later increased to 35 to eliminate overshoot)."
+  - "MATLAB function block in Simulink computed angular acceleration via left matrix division: d2q = D(Tau − C·dq − G)."
 
 limitations:                   # blue box — known constraints and future directions
-  - Feedback linearisation assumes perfect model knowledge — parameter uncertainty or unmodelled dynamics degrade tracking on the physical plant.
-  - The Ziegler-Nichols tuning provided a starting point only; significant manual derivative gain adjustment was required, indicating sensitivity to nonlinear coupling.
-  - "Future work: computed torque control or MPC would handle residual nonlinearities more robustly and reduce manual tuning dependency."
+  - PID performance on the full nonlinear model was poor; feedback linearization simplifications and joint decoupling introduced unmodelled dynamics.
+  - Gains were tuned on the linearized system only; performance on the actual dynamic model was not fully optimised.
+  - The decoupling assumption discards cross-joint coupling effects, which remain a source of tracking error in the nonlinear simulation.
 
 # ── GALLERY ──────────────────────────────────────────────────────────────────
 # Drop any image named gallery-1.jpg, gallery-2.jpg, gallery-3.jpg etc. into
