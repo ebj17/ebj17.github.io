@@ -15,7 +15,7 @@ title: Einar Jensen's Portfolio # This is what shows up in the tab of the browse
 name: Einar Benjamin Jensen
 headline: Robotics & Automation Engineer | From Simulation to Hardware
 description: >- # dont remove this line. this will ignore all new lines until the next section
-  Mechatronics engineer pursuing an MSc in Autonomous Systems at DTU. My work sits at the boundary between robot control and machine learning, applying reinforcement learning, deep learning, and data-driven control towards robots that can learn, adapt, and collaborate alongside humans.
+  Mechatronics engineer pursuing a MSc in Autonomous Systems at DTU.<br><br>My work sits at the boundary between robot control and machine learning, applying reinforcement learning, deep learning, and data-driven control towards robots that can learn, adapt, and collaborate alongside humans.
 
 # Place your profile image in /assets/images/profile-image/folder and edit the file name
 profile_image: ./assets/images/profile-image/avatar.jpeg
