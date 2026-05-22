@@ -20,7 +20,7 @@ skills:                        # pill tags shown under "Skills Used" — add or 
 # ── IMAGES ───────────────────────────────────────────────────────────────────
 main-image: /preview.png       # banner image at the top of the page (crop ratio 3:1)
 # image-position: center 50%  # optional: shift the banner crop, e.g. "center 30%"
-images_in_column: 2         # optional: how many gallery images appear in the right column (rest flow below)
+images_in_column: 3         # optional: how many gallery images appear in the right column (rest flow below)
 # images_below_per_row: 2     # optional: columns in the below grid (default 2)
 # image_scales:               # optional: width per gallery image in order (100% = fill container)
 #   - 100%                    # gallery-1
