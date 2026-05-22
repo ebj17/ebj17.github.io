@@ -30,23 +30,26 @@ main-image: /preview.png       # banner image at the top of the page (crop ratio
 
 # ── SPEC BOXES ───────────────────────────────────────────────────────────────
 objectives:                    # yellow box — what you set out to do
-  - Placeholder objective — describe the main goal of this project.
-  - Placeholder objective — what problem were you trying to solve?
-  - Placeholder objective — what did you set out to build or prove?
+  - Model the dynamic behaviour of the time-pressure membrane valve dispensing system using a grey-box subsystem approach.
+  - Develop and simulate advanced nonlinear control strategies capable of outperforming the existing on/off controller.
+  - "Benchmark the above strategy against fill precision (±0.2 mm fill accuracy), robustness to pressure fluctuations, and cycle time (3.6s)."
 
 outcomes:                      # green box — key results and achievements
-  - Placeholder outcome — key result or achievement from this project.
-  - Placeholder outcome — impact or contribution made.
-  - Placeholder outcome — what was demonstrated or validated?
+  - A coupled grey-box plant model in Simulink integrating identified actuator, membrane valve, and fluid path subsystem dynamics using physics-inspired data-driven methods.
+  - A Sliding Mode Controller was designed and shown to outperform other strategies in tracking accuracy and disturbance robustness under simulated time-varying upstream pressure conditions.
+  - The project established a reusable control framework for pharmaceutical dosing systems, providing Novo Nordisk with insights into system nonlinearities and a foundation for future filling line development.
 
 technical:                     # red box — technologies, methods, and implementation details
-  - Placeholder — key technology or method used.
-  - Placeholder — important implementation detail.
-  - Placeholder — tools, frameworks, or algorithms applied.
+  - "Piezoelectric actuator model (Xeryon XLA-5) identified via PRBS-based indirect closed-loop frequency domain system identification using Welch's method."
+  - Membrane valve characterised experimentally using a custom Arduino-driven load cell and external ADC setup.
+  - Flow model obtained through symbolic regression fitted to the orifice equation, with effective area and discharge coefficients as functions of actuator stroke.
+  - "Fluid path dynamics modelled as attenuation and time delay. CFD simulations (Star CCM+) used to capture flow behaviour across operating conditions."
+  - "Controllers designed in MATLAB/Simulink including PID, LQR/LQI, and Sliding Mode Control."
 
 limitations:                   # blue box — known constraints and future directions
-  - Placeholder limitation.
-  - Placeholder future improvement.
+  - A fundamental trade-off between tracking accuracy and actuator compliance was identified. Chattering in the SMC drives the system past actuator velocity limits, motivating investigation into higher-order SMC variations.
+  - The model was validated in simulation only. Real-life testing on the full system is required to confirm practical accuracy and expose model uncertainties from subsystem coupling effects.
+  - The CFD and coupled plant model cover a single fluid path. Future work should extend this to all manifold channels to assess inter-channel interaction and filling variation.
 
 # ── GALLERY ──────────────────────────────────────────────────────────────────
 # Drop any image named gallery-1.jpg, gallery-2.jpg, gallery-3.jpg etc. into
