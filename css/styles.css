@@ -180,34 +180,35 @@ nav .mobile-nav {
 }
 
 .hero-section .text h2 {
-    font-size: 50px;
+    font-size: 68px; /* tuning: hero name size */
 }
 
 .hero-section .text .external-links i {
-    font-size: 20px;
-    padding: 0 5px;
+    font-size: 28px; /* tuning: hero social icon size */
+    padding: 0 6px;
     color: var(--text-color);
 }
 
 .hero-section .text h3 {
-    font-size: 18px;
+    font-size: 22px; /* tuning: hero headline size */
     color: var(--text-color);
 }
 
 .hero-section .text p {
     margin-top: 15px;
-    font-size: 15px;
+    font-size: 18px; /* tuning: hero description size */
     padding: 0px;
     color: var(--text-color);
 }
 
 .hero-section .text .links {
-    margin-top: 25px;
+    margin-top: 30px;
 }
 
 .hero-section .text .links a {
     display: inline-block;
-    padding: 5px 10px;
+    padding: 8px 18px; /* tuning: hero button padding */
+    font-size: 17px; /* tuning: hero button font size */
     color: var(--link-color);
     border: 2px solid var(--link-color);
     border-radius: 5px;
