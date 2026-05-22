@@ -664,9 +664,9 @@ footer p {
 
 .about-page-photo img {
     width: 100%;
-    max-height: 480px;
+    max-height: 680px; /* tuning: about page photo height */
     object-fit: cover;
-    object-position: center 20%;
+    object-position: center 40%; /* tuning: about page photo vertical crop position */
     border-radius: 12px;
     display: block;
 }
