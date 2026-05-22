@@ -14,8 +14,9 @@ layout: wrapper
         {% assign image_path = "/" | append: folder_path | append: page['main-image'] %}
         {% assign img_pos = page['image-position'] | default: "center 50%" %}
         {% assign img_scale = page['main-image-scale'] | default: "1" %}
+        {% assign img_ratio = page['main-image-ratio'] | default: "3/1" %}
         <div class="summary-img-wrap">
-            <img src="{{ image_path }}" alt="{{ page.title }} image" style="object-position: {{ img_pos }}; transform: scale({{ img_scale }});">
+            <img src="{{ image_path }}" alt="{{ page.title }} image" style="object-position: {{ img_pos }}; transform: scale({{ img_scale }}); aspect-ratio: {{ img_ratio }};">
         </div>
 
         <div class="title-header">
