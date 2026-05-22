@@ -455,10 +455,10 @@ nav .mobile-nav {
     justify-content: center;
     align-items: center;
     padding: 5px 14px;
-    background-color: #2563eb; /* tuning: skills pill background colour */
-    color: #ffffff; /* tuning: skills pill text colour */
+    background-color: var(--light-background-color);
+    color: var(--link-color);
     border-radius: 20px;
-    font-size: 15px; /* tuning: skills pill font size */
+    font-size: 20px; /* tuning: skills pill font size — matches category label */
     font-weight: 500;
 }
 
