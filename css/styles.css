@@ -414,62 +414,43 @@ nav .mobile-nav {
     margin-bottom: 18px;
 }
 
-/* Tab nav — category buttons */
-.skills-tab-nav {
+.skills-grid {
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 20px;
+    flex-direction: column;
 }
 
-.skills-tab-btn {
-    background: transparent;
-    border: 1.5px solid var(--border-color);
-    color: var(--text-color);
-    padding: 6px 16px;
-    border-radius: 20px;
+.skills-row {
+    display: grid;
+    grid-template-columns: 175px 1fr;
+    align-items: start;
+    gap: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.skills-row:last-child {
+    border-bottom: none;
+}
+
+.skills-row .category-label {
     font-size: 15px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background 0.18s, border-color 0.18s, color 0.18s;
-    font-family: inherit;
-}
-
-.skills-tab-btn:hover {
-    border-color: var(--link-color);
-    color: var(--link-color);
-}
-
-.skills-tab-btn.active {
-    background-color: var(--light-background-color);
-    border-color: var(--link-color);
-    color: var(--link-color);
     font-weight: 600;
+    color: var(--text-color);
+    padding-top: 4px;
 }
 
-/* Tab panels — skill pills */
-.skills-tab-panel {
-    display: none;
-    flex-wrap: wrap;
-    gap: 8px;
-    animation: skillsFadeIn 0.18s ease;
-}
-
-.skills-tab-panel.active {
+.skills-pills {
     display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
 }
 
-@keyframes skillsFadeIn {
-    from { opacity: 0; transform: translateY(4px); }
-    to   { opacity: 1; transform: translateY(0); }
-}
-
-.skills-tab-panel .skill {
+.skills-pills .skill {
     background-color: var(--light-background-color);
     color: var(--link-color);
     border-radius: 20px;
-    padding: 5px 14px;
-    font-size: 16px;
+    padding: 3px 12px;
+    font-size: 14px;
     font-weight: 500;
 }
 
@@ -1445,13 +1426,17 @@ footer p {
         padding: 0 5px;
     }
 
-    .skills-tab-btn {
-        font-size: 13px;
-        padding: 5px 12px;
+    .skills-row {
+        grid-template-columns: 120px 1fr;
+        gap: 10px;
     }
 
-    .skills-tab-panel .skill {
-        font-size: 14px;
+    .skills-row .category-label {
+        font-size: 13px;
+    }
+
+    .skills-pills .skill {
+        font-size: 13px;
     }
 
     /*SECTION 4: Contact */
