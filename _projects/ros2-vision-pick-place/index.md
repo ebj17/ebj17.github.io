@@ -37,41 +37,29 @@ main-image: /preview.png       # banner image at the top of the page (crop ratio
 
 # ── SPEC BOXES ───────────────────────────────────────────────────────────────
 objectives:                    # yellow box — what you set out to do
-  - Integrate the ICube Robotics iiwa_ros2 community URDF into a custom ROS2 workspace and bring up ros2_control with JointTrajectoryController running at 225Hz
-  - Write a C++ subscriber node to read and log all 7 joint states from /joint_states in real time, establishing core ROS2 pub/sub patterns
-  - Write a C++ publisher node to send JointTrajectory commands and move the arm to a target configuration via /iiwa_arm_controller/joint_trajectory
-  - Build a Python ROS2 vision node that publishes the detected object pose on /detected_object_pose and draws a visual marker in RViz2
-  - Implement a C++ MoveIt 2 controller node that subscribes to the detected pose, invokes the Pilz PTP planner for inverse kinematics and path planning, and executes the resulting trajectory
-  - Stream and visualise all 7 joint positions live during execution using PlotJuggler
+  - "Integrate a Kuka iiwa 7-DOF arm into a custom ROS2 workspace with ros2_control running a JointTrajectoryController at 225 Hz."
+  - Build a Python vision node that detects a target object and publishes its 3D pose for downstream consumption.
+  - Implement a C++ MoveIt 2 controller that subscribes to the detected pose, plans a collision-free path via the Pilz PTP planner, and executes it on the arm.
+  - Visualise joint telemetry live during execution using PlotJuggler.
 
 outcomes:                      # green box — key results and achievements
-  - "Built and maintained the full ROS2 workspace from scratch: package structure, CMakeLists.txt dependency management, colcon build system, and sourcing — including resolving a Miniconda/ROS2 Python conflict (conda's Python 3.13 overriding the required system Python 3.10) by prepending /usr/bin to PATH"
-  - "Implemented joint_monitor.cpp — a subscriber node demonstrating the core rclcpp callback pattern: std::bind, SharedPtr member variables, and the spin/shutdown lifecycle"
-  - Implemented trajectory_sender.cpp — a publisher node that constructs a JointTrajectory message manually and commands the arm to a target joint configuration with a 2-second startup delay
-  - Designed and implemented object_detector.py — a Python rclpy node publishing a hardcoded target pose on /detected_object_pose every second alongside a red cube Marker for RViz2 visualisation; architecture is camera-ready — replacing the hardcoded pose with an OpenCV depth camera subscriber requires no changes to downstream nodes
-  - Implemented moveit_controller.cpp — receives the detected pose, spins MoveIt 2 in a separate thread to keep callbacks live, calls MoveGroupInterface.setPoseTarget() with the Pilz PTP planner, and executes the planned trajectory; resolved a critical configuration issue where MoveGroupInterface requires kinematics.yaml on its own node's parameter server, not just on move_group — fixed via a custom launch file passing robot_description, robot_description_semantic, and kinematics parameters explicitly
-  - Verified smooth S-curve joint trajectories across all 7 joints during execution using PlotJuggler streaming /joint_states at 225Hz
+  - "Full ROS2 workspace built from scratch including package structure, CMakeLists.txt, colcon build, and environment sourcing."
+  - Implemented joint_monitor.cpp and trajectory_sender.cpp establishing core rclcpp pub/sub and message construction patterns.
+  - "Designed object_detector.py publishing a target pose and RViz2 marker; architecture is camera-ready with no downstream changes required to add live OpenCV detection."
+  - "Implemented moveit_controller.cpp with MoveIt 2 running in a separate thread; resolved a critical kinematics.yaml parameter scoping issue via a custom launch file."
+  - Verified smooth S-curve trajectories across all 7 joints via PlotJuggler streaming at 225 Hz.
 
 technical:                     # red box — technologies, methods, and implementation details
-  - "Robot: Kuka iiwa 7-DOF (ICube Robotics iiwa_ros2 community URDF/Xacro)"
-  - "Middleware: ROS2 Humble on Ubuntu 22.04 WSL2"
-  - "Control: ros2_control JointTrajectoryController @ 225Hz, fake hardware mode (use_fake_hardware:=true)"
-  - "Simulation: Gazebo Classic headless (gzserver); RViz2 for visualisation"
-  - "Motion planning: MoveIt 2 + Pilz Industrial Motion Planner (PTP)"
-  - "C++ nodes: rclcpp — joint_monitor, trajectory_sender, moveit_controller"
-  - "Python node: rclpy — object_detector"
-  - "Key packages: moveit_ros_planning_interface, trajectory_msgs, geometry_msgs, visualization_msgs, sensor_msgs"
-  - "Architecture: object_detector.py → /detected_object_pose (geometry_msgs/PoseStamped) → moveit_controller.cpp → MoveIt 2 Pilz PTP planner → iiwa_arm_controller @ 225Hz"
-  - "Launch: single pick_and_place.launch.py starts simulation, move_group, RViz2, then object_detector (immediately) and moveit_controller (after 15s delay for move_group initialisation)"
-  - "Telemetry: PlotJuggler streaming /joint_states; smooth S-curve trajectories confirmed across all 7 joints"
-  - "Known issues resolved: Miniconda Python conflict (PATH fix), MoveGroupInterface kinematics parameter scoping (custom launch file), Gazebo GUI crash on WSL2 (headless gzserver)"
-  - "GitHub: https://github.com/ebj17"
+  - "Robot: Kuka iiwa 7-DOF using ICube Robotics iiwa_ros2 community URDF with fake hardware mode."
+  - "Middleware: ROS2 Humble on Ubuntu 22.04 WSL2; Gazebo Classic headless with RViz2 for visualisation."
+  - "Motion planning: MoveIt 2 with Pilz Industrial Motion Planner (PTP); IK and path planning invoked via MoveGroupInterface.setPoseTarget()."
+  - "Architecture: object_detector.py → /detected_object_pose → moveit_controller.cpp → Pilz PTP → JointTrajectoryController at 225 Hz."
+  - "Single launch file starts simulation, move_group, RViz2, vision node immediately, and controller after a 15-second delay for move_group initialisation."
 
 limitations:                   # blue box — known constraints and future directions
-  - Object position is hardcoded in the vision node — a real pipeline would use OpenCV colour segmentation on a depth camera topic to compute the 3D pose.
-  - Gazebo GUI disabled on WSL2 due to GPU constraints; physics ran headless with RViz2 as the sole visualiser, preventing full visual validation.
-  - No collision objects added to the MoveIt 2 planning scene — the planner cannot currently avoid obstacles in the workspace.
-  - "Future work: replace hardcoded pose with live OpenCV detection from a simulated depth camera in Gazebo; add collision objects to the planning scene; extend to a full pick-and-place sequence with gripper control."
+  - Object pose is hardcoded; a real pipeline would compute it from OpenCV colour segmentation on a depth camera topic.
+  - "No collision objects in the MoveIt 2 planning scene, so obstacle avoidance is not currently possible."
+  - "Future work: live OpenCV detection from a simulated depth camera, collision objects in the planning scene, and a full pick-and-place sequence with gripper control."
 
 # ── GALLERY ──────────────────────────────────────────────────────────────────
 # Drop any image named gallery-1.jpg, gallery-2.jpg, gallery-3.jpg etc. into
