@@ -392,8 +392,8 @@ nav .mobile-nav {
 
 .featured-badge {
     display: inline-block;
-    background-color: var(--highlight-color);
-    color: #fff;
+    background-color: var(--light-background-color);
+    color: var(--link-color);
     font-size: 0.75em;
     font-weight: 600;
     padding: 3px 10px;
