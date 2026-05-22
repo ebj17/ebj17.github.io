@@ -11,12 +11,15 @@ skills:                        # pill tags shown under "Skills Used" — add or 
   - C++
   - Arduino
   - ESP8266
+  - ESP-NOW
   - Embedded Systems
   - PWM Motor Control
   - Ultrasonic Sensing
   - Obstacle Avoidance
-  - Load Cell Integration
+  - FSR Sensing
   - Distributed Control
+  - Siemens NX
+  - 3D Printing
 
 # ── IMAGES ───────────────────────────────────────────────────────────────────
 main-image: /preview.png       # banner image at the top of the page (crop ratio 3:1)
