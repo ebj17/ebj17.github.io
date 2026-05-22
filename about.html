@@ -8,10 +8,6 @@ permalink: /about/
 
     <!-- Header: image, name, bio, links -->
     <div class="about-page-header">
-        <div class="about-page-image">
-            <img src="{{ site.profile_image }}" alt="{{ site.name }}">
-        </div>
-
         <h1>{{ site.name }}</h1>
 
         <p class="about-bio">
@@ -19,6 +15,10 @@ permalink: /about/
             control systems, and automation technologies. Highly skilled in integrating electronics,
             programming, and mechanical design to develop intelligent robotic systems.
         </p>
+
+        <div class="about-page-photo">
+            <img src="/assets/images/AboutSection/MXKW2539.JPG" alt="{{ site.name }}">
+        </div>
 
         <div class="about-cta">
             {% if site.external-links.linkedin %}

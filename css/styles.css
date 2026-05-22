@@ -657,6 +657,20 @@ footer p {
     gap: 20px;
 }
 
+.about-page-photo {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.about-page-photo img {
+    width: 100%;
+    max-height: 480px;
+    object-fit: cover;
+    object-position: center 20%;
+    border-radius: 12px;
+    display: block;
+}
+
 .about-page-image img {
     width: 200px;
     height: 200px;
