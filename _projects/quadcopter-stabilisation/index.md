@@ -1,5 +1,6 @@
 ---
 layout: post
+order: 7
 
 # ── TITLE & DESCRIPTION ──────────────────────────────────────────────────────
 title: LQI Control and Kalman Filter Design for Autonomous Quadcopter Hover   # h1 shown at the top of the page

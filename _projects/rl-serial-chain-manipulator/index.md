@@ -1,5 +1,6 @@
 ---
 layout: post
+order: 2
 
 # ── TITLE & DESCRIPTION ──────────────────────────────────────────────────────
 title: 7-DOF Robotic Arm Reach Control via Proximal Policy Optimisation   # h1 shown at the top of the page

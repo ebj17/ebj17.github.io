@@ -1,5 +1,6 @@
 ---
 layout: post
+order: 4
 
 # ── TITLE & DESCRIPTION ──────────────────────────────────────────────────────
 title: Autonomous Bartender AGV   # h1 shown at the top of the page

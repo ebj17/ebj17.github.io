@@ -4,8 +4,8 @@
 
     <div class="grid-container">
 
-        {% assign featured_projects = site.projects | where: "featured", true %}
-        {% assign regular_projects = site.projects | where_exp: "item", "item.featured != true" %}
+        {% assign featured_projects = site.projects | where: "featured", true | sort: "order" %}
+        {% assign regular_projects = site.projects | where_exp: "item", "item.featured != true" | sort: "order" %}
 
         {% for item in featured_projects %}
         {% assign folder_path = item.path | split: "/" | slice: 0, 2 | join: "/" %}

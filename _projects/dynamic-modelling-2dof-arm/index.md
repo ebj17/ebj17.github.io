@@ -1,5 +1,6 @@
 ---
 layout: post
+order: 6
 
 # ── TITLE & DESCRIPTION ──────────────────────────────────────────────────────
 title: Dynamic Modelling and PID Control of a 2-DOF Robotic Arm   # h1 shown at the top of the page

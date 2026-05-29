@@ -1,5 +1,6 @@
 ---
 layout: post
+order: 5
 
 # ── TITLE & DESCRIPTION ──────────────────────────────────────────────────────
 title: Deep Learning for Pose and Age Classification   # h1 shown at the top of the page

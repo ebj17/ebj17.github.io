@@ -1,5 +1,6 @@
 ---
 layout: post
+order: 8
 
 # ── TITLE & DESCRIPTION ──────────────────────────────────────────────────────
 title: Robot Manipulator Path Planning using STOMP   # h1 shown at the top of the page

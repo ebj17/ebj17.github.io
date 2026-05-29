@@ -1,5 +1,6 @@
 ---
 layout: post
+order: 3
 
 # ── TITLE & DESCRIPTION ──────────────────────────────────────────────────────
 title: Vision-Guided Pick & Place with ROS2 and MoveIt 2   # h1 shown at the top of the page
