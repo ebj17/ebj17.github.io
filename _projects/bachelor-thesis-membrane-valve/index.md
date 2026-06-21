@@ -5,7 +5,7 @@ order: 1
 # ── TITLE & DESCRIPTION ──────────────────────────────────────────────────────
 title: Modelling and Control of a Time-Pressure Membrane Valve System for Pharmaceutical Filling
 # ↑ h1 shown at the top of the page
-description: Bachelor's thesis at DTU — developed a dynamic model and control strategy for a time-pressure membrane valve system used in aseptic pharmaceutical filling, combining system identification, nonlinear modelling, and controller design for precise liquid dispensing.
+description: Bachelor's thesis at SDU — developed a dynamic model and control strategy for a time-pressure membrane valve system used in aseptic pharmaceutical filling, combining system identification, nonlinear modelling, and controller design for precise liquid dispensing.
 # ↑ paragraph shown under "Project Overview"
 
 # ── SKILLS ───────────────────────────────────────────────────────────────────
