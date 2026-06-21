@@ -54,7 +54,6 @@ limitations:                   # blue box — known constraints and future direc
   - Policy trained on a single fixed target — generalisation to randomised target positions has not been demonstrated.
   - No end-effector orientation control; the agent controls only positional reach, not full 6-DOF pose.
   - No sim-to-real pipeline — domain randomisation and physical deployment remain unimplemented.
-  - "Future work: curriculum learning from fixed to randomised targets, orientation control for the end-effector, and sim-to-real transfer using domain randomisation."
 
 # ── GALLERY ──────────────────────────────────────────────────────────────────
 # Drop any image named gallery-1.jpg, gallery-2.jpg, gallery-3.jpg etc. into
