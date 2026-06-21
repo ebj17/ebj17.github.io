@@ -47,7 +47,7 @@ objectives:                    # yellow box — what you set out to do
 outcomes:                      # green box — key results and achievements
   - "Full ROS2 workspace built from scratch including package structure, CMakeLists.txt, colcon build, and environment sourcing."
   - Implemented joint_monitor.cpp and trajectory_sender.cpp establishing core rclcpp pub/sub and message construction patterns.
-  - "Designed object_detector.py publishing a target pose and RViz2 marker; architecture is camera-ready with no downstream changes required to add live OpenCV detection."
+  - "Designed object_detector.py publishing a target pose and RViz2 marker. The architecture is camera ready with no downstream changes required to add live OpenCV detection."
   - "Implemented moveit_controller.cpp with MoveIt 2 running in a separate thread; resolved a critical kinematics.yaml parameter scoping issue via a custom launch file."
   - Verified smooth S-curve trajectories across all 7 joints via PlotJuggler streaming at 225 Hz.
 
