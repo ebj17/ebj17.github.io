@@ -4,7 +4,7 @@ order: 3
 
 # ── TITLE & DESCRIPTION ──────────────────────────────────────────────────────
 title: Vision-Guided Pick & Place with ROS2 and MoveIt 2   # h1 shown at the top of the page
-description: Developed a full ROS2 Humble pipeline for autonomous pick and place on a Kuka iiwa 7-DOF arm — from environment setup and robot description integration to real-time vision, motion planning, and trajectory execution. A Python vision node detects a target object and publishes its 3D pose; a C++ MoveIt 2 controller subscribes, plans a collision-free path via the Pilz PTP planner, and executes it on the arm at 225Hz — all visualised live in RViz2 with joint telemetry streamed through PlotJuggler.
+description: Developed a full ROS2 Humble pipeline for autonomous pick and place on a Kuka iiwa 7-DOF arm from environment setup to real-time vision, motion planning, and trajectory execution. A Python vision node detects a target object and publishes its 3D pose, a C++ MoveIt 2 controller subscribes, plans a collision-free path via the Pilz PTP planner, and executes it on the arm. All visualised live in RViz2 with joint telemetry streamed through PlotJuggler.
 # ↑ paragraph shown under "Project Overview"
 
 # ── SKILLS ───────────────────────────────────────────────────────────────────
